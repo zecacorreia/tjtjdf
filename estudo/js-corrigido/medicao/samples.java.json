@@ -1,0 +1,11 @@
+{
+ "ArrayDataFlowSample": "1\n2\n3\n4\n10\n",
+ "ArrayIndirectDataFlowSample": "0\n",
+ "ConfluenceWithTransitivitySample": "14\n",
+ "DoubleSourceSample": "null\n30\n",
+ "IntraproceduralDataFlow": "100\n100\n10\n",
+ "IntraproceduralIndirectSource": "0\n12\n",
+ "SourceSinkMethodCallSample": "3\n",
+ "SourceSinkVariableAttributionSample": "",
+ "SourceSinkVariableAttributionWithAutoIncrement": ""
+}

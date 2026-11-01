@@ -1,0 +1,4 @@
+Conflicts found: 2
+Conflict { sourceLine: 14, sinkLine: 16 }
+Conflict { sourceLine: 14, sinkLine: 19 }
+Expected 2 conflicts: PASS

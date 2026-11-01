@@ -1,0 +1,9 @@
+ArrayDataFlowSample ; 0.2 s ; False
+ArrayIndirectDataFlowSample ; 0 s ; False
+ConfluenceWithTransitivitySample ; 0 s ; False
+IntraproceduralDataFlow ; 0 s ; False
+IntraproceduralIndirectSource ; 0 s ; False
+SourceSinkMethodCallSample ; 0 s ; False
+DoubleSourceSample ; 0 s ; False
+SourceSinkVariableAttributionSample ; 0 s ; False
+SourceSinkVariableAttributionWithAutoIncrement ; 0 s ; False

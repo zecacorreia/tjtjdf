@@ -1,0 +1,10 @@
+{
+ "data": "2026-11-01",
+ "antes_vs_depois": {
+  "demo_saida_igual_ao_java": {"antes": false, "depois": true},
+  "carga_ordem_alfabetica": {"antes": "TypeError: Cannot read properties of undefined (reading 'instance')", "depois": "OK"},
+  "hash_Conflict(100000000,1)": {"java": -1194967295, "antes": 3100000001, "depois": -1194967295},
+  "cenarios_aleatorios_1000": {"divergentes_antes": 231, "divergentes_depois": 0, "tainted_antes": 231, "reach_antes": 137, "tainted_depois": 0, "reach_depois": 0},
+  "samples_saida_igual_ao_java_de_9": {"antes": 5, "depois": 9, "vazias_em_ambos": 2}
+ }
+}

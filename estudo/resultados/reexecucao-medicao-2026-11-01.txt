@@ -1,0 +1,53 @@
+Reexecucao de js-corrigido/medicao em 2026-11-01
+Ambiente: Linux (VM do app Claude desktop), node v22.23.4, openjdk version "11.0.32.1" 2026-08-18, javac via modulo jdk.compiler
+Entradas: JS originais de jsweet-quickstart/target/js (dataflow) e estudo/jsweet-samples-js-2026-11-01 (samples); Java de jsweet-quickstart/src/main/java/quickstart/dataflow e estudo/samples-originais
+
+--- patch.js
+dataflow/Collector.js C1 x1
+dataflow/ReachDefinitionAnalysis.js C1 x2
+dataflow/ReachDefinitionAnalysis.js C2 x1
+dataflow/TaintedAnalysis.js C1 x2
+dataflow/ArrayTaintedAnalysisOneConflictDemo.js C3 x1
+dataflow/ArrayTaintedAnalysisOneConflictDemo.js C5 x1
+dataflow/Conflict.js C4 x1
+dataflow/DataFlowAbstraction.js C4 x1
+dataflow/dataflow.bundle.js C5 x1
+samples/IntraproceduralIndirectSource.js S1 x1
+samples/ConfluenceWithTransitivitySample.js S2 x1
+samples/SourceSinkMethodCallSample.js S2 x1
+samples/IntraproceduralDataFlow.js S2 x1
+samples/SourceSinkVariableAttributionSample.js S2 x1
+samples/SourceSinkVariableAttributionWithAutoIncrement.js S2 x1
+samples/IntraproceduralIndirectSource.js S2 x1
+
+--- 1000 cenarios: java.rand x orig.rand x fixed.rand
+orig: divergentes tainted=231 reach=137 de 1000
+fixed: divergentes tainted=0 reach=0 de 1000
+
+--- samples (node samples.js)
+{"ok":5,"vazias":2,"total":9,"rows":[["ArrayDataFlowSample","igual","\"1\\n2\\n3\\n4\\n10\\n\"","\"1\\n2\\n3\\n4\\n10\\n\""],["ArrayIndirectDataFlowSample","igual","\"0\\n\"","\"0\\n\""],["ConfluenceWithTransitivitySample","diferente","\"14\\n\"","\"\""],["DoubleSourceSample","igual","\"null\\n30\\n\"","\"null\\n30\\n\""],["IntraproceduralDataFlow","diferente","\"100\\n100\\n10\\n\"","\"\""],["IntraproceduralIndirectSource","diferente","\"0\\n12\\n\"","\"\""],["SourceSinkMethodCallSample","diferente","\"3\\n\"","\"\""],["SourceSinkVariableAttributionSample","igual","\"\"","\"\""],["SourceSinkVariableAttributionWithAutoIncrement","igual","\"\"","\"\""]]}
+
+{"ok":9,"vazias":2,"total":9,"rows":[["ArrayDataFlowSample","igual","\"1\\n2\\n3\\n4\\n10\\n\"","\"1\\n2\\n3\\n4\\n10\\n\""],["ArrayIndirectDataFlowSample","igual","\"0\\n\"","\"0\\n\""],["ConfluenceWithTransitivitySample","igual","\"14\\n\"","\"14\\n\""],["DoubleSourceSample","igual","\"null\\n30\\n\"","\"null\\n30\\n\""],["IntraproceduralDataFlow","igual","\"100\\n100\\n10\\n\"","\"100\\n100\\n10\\n\""],["IntraproceduralIndirectSource","igual","\"0\\n12\\n\"","\"0\\n12\\n\""],["SourceSinkMethodCallSample","igual","\"3\\n\"","\"3\\n\""],["SourceSinkVariableAttributionSample","igual","\"\"","\"\""],["SourceSinkVariableAttributionWithAutoIncrement","igual","\"\"","\"\""]]}
+
+
+--- demo/alfabetica/hash
+[java demo]
+Conflicts found: 2
+source(line 14) => sink(line 16)
+source(line 14) => sink(line 19)
+Expected 2 conflicts: PASS
+[orig demo]
+Conflicts found: 2
+Conflict { sourceLine: 14, sinkLine: 16 }
+Conflict { sourceLine: 14, sinkLine: 19 }
+Expected 2 conflicts: PASS
+[fixed demo]
+Conflicts found: 2
+source(line 14) => sink(line 16)
+source(line 14) => sink(line 19)
+Expected 2 conflicts: PASS
+alfabetica orig: ERRO: TypeError: Cannot read properties of undefined (reading 'instance')
+alfabetica fixed: OK
+hash java=-1194967295 orig=3100000001 fixed=-1194967295
+
+--- saidas identicas as guardadas em medicao/*.out: orig.rand fixed.rand java.rand orig.demo fixed.demo java.demo (todas identicas)

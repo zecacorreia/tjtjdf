@@ -1,0 +1,4 @@
+Conflicts found: 2
+source(line 14) => sink(line 16)
+source(line 14) => sink(line 19)
+Expected 2 conflicts: PASS
