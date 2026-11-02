@@ -1,0 +1,9 @@
+ArrayDataFlowSample                              ok
+ArrayIndirectDataFlowSample                      ok
+ConfluenceWithTransitivitySample                 ok
+DoubleSourceSample                               NAO PORTAVEL (identidade de objeto)
+IntraproceduralDataFlow                          ok
+IntraproceduralIndirectSource                    ok
+SourceSinkMethodCallSample                       ok
+SourceSinkVariableAttributionSample              sem saida
+SourceSinkVariableAttributionWithAutoIncrement   sem saida

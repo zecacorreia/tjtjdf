@@ -1,0 +1,10 @@
+sample,acao,linha_inserida,trecho
+ArrayDataFlowSample,ja_tinha_main,,
+ArrayIndirectDataFlowSample,ja_tinha_main,,
+ConfluenceWithTransitivitySample,main_acrescentado,22,"new ConfluenceWithTransitivitySample().foo();"
+DoubleSourceSample,ja_tinha_main,,
+IntraproceduralDataFlow,main_acrescentado,29,"new IntraproceduralDataFlow().foo();"
+IntraproceduralIndirectSource,main_acrescentado,29,"IntraproceduralIndirectSource o = new IntraproceduralIndirectSource(); o.m(); o.a();"
+SourceSinkMethodCallSample,main_acrescentado,17,"new SourceSinkMethodCallSample().foo();"
+SourceSinkVariableAttributionSample,main_acrescentado,29,"new SourceSinkVariableAttributionSample().foo();"
+SourceSinkVariableAttributionWithAutoIncrement,main_acrescentado,20,"new SourceSinkVariableAttributionWithAutoIncrement().foo();"

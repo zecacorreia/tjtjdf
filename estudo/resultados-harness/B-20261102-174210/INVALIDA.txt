@@ -1,0 +1,1 @@
+Execucao invalida: todas as chamadas ao Gemini falharam com 503/429 (API sobrecarregada e cota de 5 req/min). Nao usar.

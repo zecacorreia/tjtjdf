@@ -1,0 +1,29 @@
+{
+ "modelo": "gemini-3.8-flash",
+ "http": 200,
+ "ms": 788867,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [
+  503,
+  503
+ ],
+ "infra_falhou": false,
+ "prompt_sha256": "a86194d1820fddee151128ac5e78af597d1447a5fa6128de527aedfdce0d4d5c",
+ "uso": {
+  "promptTokenCount": 1156,
+  "candidatesTokenCount": 586,
+  "totalTokenCount": 2217,
+  "promptTokensDetails": [
+   {
+    "modality": "TEXT",
+    "tokenCount": 1156
+   }
+  ],
+  "thoughtsTokenCount": 475,
+  "serviceTier": "standard"
+ },
+ "finish": "STOP",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    class IntraproceduralIndirectSource {\n                        m() {\n                            let x = 1000;\n                            x = this.random();\n                            console.info(x);\n                            const y = x + 1;\n                            process.stdout.write(y.toString());\n                        }\n                        /*private*/ random() {\n                            return 0;\n                        }\n                        a() {\n                            const mock = new br.unb.cic.analysis.samples.MockClass();\n                            mock.setA(1);\n                            const y = mock.getA() + 1;\n                            console.info(y);\n                        }\n                        static main(args) {\n                            const o = new IntraproceduralIndirectSource();\n                            o.m();\n                            o.a();\n                        }\n                    }\n                    samples.IntraproceduralIndirectSource = IntraproceduralIndirectSource;\n                    IntraproceduralIndirectSource[\"__class\"] = \"br.unb.cic.analysis.samples.IntraproceduralIndirectSource\";\n                    class MockClass {\n                        constructor() {\n                            if (this.a === undefined) {\n                                this.a = 0;\n                            }\n                        }\n                        setA(a) {\n                            this.a = a;\n                        }\n                        getA() {\n                            return this.a;\n                        }\n                    }\n                    samples.MockClass = MockClass;\n                    MockClass[\"__class\"] = \"br.unb.cic.analysis.samples.MockClass\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.IntraproceduralIndirectSource.main(null);\n```\nSubstituição de `console.info(y)` por `process.stdout.write(y.toString())` no método `m` para reproduzir o `System.out.print` sem quebra de linha."
+}

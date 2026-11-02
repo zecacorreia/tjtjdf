@@ -1,0 +1,2 @@
+prompt_sha256=cd0e7a89a3e8ba16862c0e0b77a423296bb9e4342b050df5d75fff95cc50d8d2
+modelo=gemini-3.8-flash

@@ -1,0 +1,16 @@
+{
+ "modelo": "gemini-3.8-flash",
+ "http": 503,
+ "ms": 3150,
+ "aplicado": false,
+ "literal_suspeito": false,
+ "prompt_sha256": "b795159bcae89740bae89ca84f23c9b9ed99d0f1398c27dc1e422c89789b09c9",
+ "uso": null,
+ "finish": null,
+ "erro": {
+  "code": 503,
+  "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "status": "UNAVAILABLE"
+ },
+ "resposta": ""
+}

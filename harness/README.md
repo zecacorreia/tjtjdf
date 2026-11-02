@@ -8,14 +8,14 @@ Avalia a tradução Java → JavaScript das 9 samples de DF, igual para A, B (e 
 | `gabarito.js` | Compila e executa as samples no Java (lançador normal, 3 vezes) e marca as que não são comparáveis: sem saída, não determinísticas ou com identidade de objeto da JVM (`Classe@hash`) |
 | `evaluate.js` | Nível L1 (gerou `.js`), L2 (executa sem exceção) e L3 (saída idêntica ao gabarito, comparação estrita), em JSONL |
 | `run-A.sh` | Abordagem A no container: pré-passo, gabarito, JSweet (várias repetições, com tempo) e avaliação |
-| `run-B.sh` | Abordagem B: pega as samples que a A não levou a L3 e chama a CLI do Claude (até 3 rodadas, N repetições), avaliando a cada rodada |
+| `run-B.sh` | Abordagem B: pega as samples que a A não levou a L3 e chama o Gemini pela API, via `agent-gemini.js` (até 3 rodadas, N repetições), avaliando a cada rodada |
 | `docker-run.ps1` | Sobe o container no Windows (`-Modo A` ou `-Modo B`) |
 
 ## Estado dos testes (02/11/2026)
 
 - **A de ponta a ponta:** `run-A.sh` rodou no Docker (execução `A-20261102-162118`, 3 repetições): 9/9 em L1 e L2 e 5/6 em L3 nas samples comparáveis. O tempo da repetição 1 saiu negativo (relógio do Docker Desktop); o script foi corrigido para usar `/proc/uptime` e a A deve ser repetida.
-- **Testados só no encadeamento, com substitutos para `mvn` e `claude`:** `run-B.sh`.
-- **Não testados:** a chamada real à CLI do Claude (flags `-p`, `--output-format json`, `--allowedTools` e formato do JSON de saída a conferir) e a instalação da CLI no `Dockerfile`.
+- **Testados só no encadeamento, com substitutos para `mvn` e para a API do Gemini:** `run-B.sh`.
+- **Não testados:** a chamada real à API do Gemini (o nome do modelo vem de `GEMINI_MODEL`; `node agent-gemini.js --list` mostra os disponíveis para a sua chave).
 
 Resultados e planilha: `../docs/`.
 
@@ -24,7 +24,8 @@ Resultados e planilha: `../docs/`.
 ```powershell
 cd C:\Users\italo\github\tjtjdf\_publicar\harness
 .\docker-run.ps1 -Modo A -Reps 3
-$env:ANTHROPIC_API_KEY = "..."   # só para a B; use sua chave
+$env:GEMINI_API_KEY = "..."   # só para a B; use sua chave
+$env:GEMINI_MODEL = "..."     # nome do modelo (veja agent-gemini.js --list)
 .\docker-run.ps1 -Modo B -PastaA estudo/resultados-harness/A-<data> -Reps 3
 ```
 

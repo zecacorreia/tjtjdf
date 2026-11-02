@@ -1,0 +1,72 @@
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:415 - no configuration file found at /tmp/qs/jsweetconfig.json
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:520 - creating transpiler version 3.1.0 (build date: 2021-04-21 20:24:55)
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:522 - current dir: /tmp/qs/.
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:523 - base directory: /tmp/qs
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:524 - working directory: /tmp/qs/.jsweet
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:525 - tsOut: /tmp/qs/target/ts - /tmp/qs/target/ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:526 - jsOut: /tmp/qs/target/js - /tmp/qs/target/js
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:527 - candyJsOut: /tmp/qs/webapp/candies
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:528 - factory: org.jsweet.transpiler.JSweetFactory@118ffcfd
+2026-11-02 16:21:44.044 DEBUG JSweetTranspiler:529 - compile classpath: /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar
+2026-11-02 16:21:44.044 DEBUG JSweetTranspiler:530 - runtime classpath: /usr/share/maven/boot/plexus-classworlds-2.11.0.jar
+2026-11-02 16:21:44.044 DEBUG JSweetTranspiler:531 - extension directory: /tmp/qs/jsweet_extension
+2026-11-02 16:21:44.044 INFO  CandyProcessor:123 - candies processor classpath: /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar
+2026-11-02 16:21:44.044 INFO  CandyProcessor:141 - extracted candies directory: /tmp/qs/webapp/candies
+2026-11-02 16:21:44.044 DEBUG ProcessUtil:67 - extra path: 
+2026-11-02 16:21:44.044 INFO  ProcessUtil:138 - cannot find tsc - searching in /root/.jsweet.v3-node_modules
+2026-11-02 16:21:44.044 INFO  CandyProcessor:226 - 2 candies found in classpath
+2026-11-02 16:21:44.044 INFO  CandyProcessor:163 - candies are up to date
+2026-11-02 16:21:44.044 DEBUG JavaCompilationComponents:106 - charset: UTF-8
+2026-11-02 16:21:44.044 DEBUG JavaCompilationComponents:107 - strict mode: false
+2026-11-02 16:21:44.044 INFO  JavaCompilationComponents:122 - creating JavaCompiler task with options: JavaCompilerOptions: [--module-path, /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar, -cp, /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar, -Xlint:path, -encoding, UTF-8]
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/IntraproceduralIndirectSource.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/IntraproceduralIndirectSource.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralIndirectSource.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ArrayDataFlowSample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ArrayDataFlowSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayDataFlowSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/DoubleSourceSample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/DoubleSourceSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/SourceSinkMethodCallSample.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/SourceSinkMethodCallSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkMethodCallSample.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/IntraproceduralDataFlow.java...
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/IntraproceduralDataFlow.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralDataFlow.ts
+2026-11-02 16:21:44.044 INFO  JSweetTranspiler:857 - ts2js on org.jsweet.transpiler.TypeScript2JavaScriptWithTsserverTranspiler@7f13811b sourceFiles=9
+2026-11-02 16:21:44.044 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:47 - ts2js with tsserver: [/tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralIndirectSource.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayDataFlowSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkMethodCallSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralDataFlow.ts, /tmp/qs/.jsweet/candies/typings/META-INF/resources/typings/jquery/1.10.0-20170726/bundle.d.ts]
+2026-11-02 16:21:44.044 INFO  TypeScript2JavaScriptWithTsserverTranspiler:75 - launching tsserver compilation : 
+compilerOptions=ts.cmd.tsc.CompilerOptions@7c1a8f0f 
+sourcesFilePaths=[/tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralIndirectSource.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayDataFlowSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkMethodCallSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/IntraproceduralDataFlow.ts, /tmp/qs/.jsweet/candies/typings/META-INF/resources/typings/jquery/1.10.0-20170726/bundle.d.ts]
+2026-11-02 16:21:45.045 INFO  TypeScript2JavaScriptWithTsserverTranspiler:173 - creating TypeScriptServiceClient
+2026-11-02 16:21:45.045 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:78 - tsserver client built
+2026-11-02 16:21:45.045 INFO  TypeScript2JavaScriptWithTsserverTranspiler:83 - open external project: /tmp/qs/target/ts
+2026-11-02 16:21:45.045 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:89 - tsserver project opened: /tmp/qs/target/ts
+2026-11-02 16:24:37.037 INFO  TypeScript2JavaScriptWithTsserverTranspiler:107 - tsserver project compiled: /tmp/qs/target/ts
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/IntraproceduralIndirectSource.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ArrayDataFlowSample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/DoubleSourceSample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ArrayIndirectDataFlowSample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/SourceSinkVariableAttributionSample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/SourceSinkMethodCallSample.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/SourceSinkVariableAttributionWithAutoIncrement.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/IntraproceduralDataFlow.js
+2026-11-02 16:21:46.046 INFO  JSweetTranspiler:841 - transpilation process finished in 1627 ms 
+> java2ts: 481.939743ms
+> ts2js: 1088.805962ms
+
+dispose client - process=ts.nodejs.NodejsProcess@cc1fb78

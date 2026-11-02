@@ -229,10 +229,10 @@ Com o `main` no pré-passo, a B tem uma única sample para corrigir. Isso testa 
 
 ### O que falta para executar a B
 
-- Definir `ANTHROPIC_API_KEY` no terminal onde o container sobe.
-- Instalar a CLI do Claude no container e conferir as flags com `claude --help`: o `run-B.sh` assume `-p`, `--output-format json` e `--allowedTools`.
-- Conferir o formato do JSON de saída para extrair tokens e custo.
-- Fixar o modelo (`CLAUDE_MODEL`) e registrar o hash do prompt, que o script já grava.
+- A IA da B passou a ser o Gemini, chamado pela API (`agent-gemini.js`), no lugar da CLI do Claude. A B anterior, feita com o Claude Sonnet 5.5, fica registrada como outra execução e não entra na comparação.
+- Definir `GEMINI_API_KEY` e `GEMINI_MODEL` no terminal onde o container sobe; `node agent-gemini.js --list` mostra os modelos disponíveis para a chave.
+- Testar uma chamada real: até aqui o script só foi testado contra um servidor falso. Conferir se o bloco ```js da resposta é extraído e se `usageMetadata` traz os tokens.
+- Fixar o modelo e a temperatura 0; o hash do prompt completo de cada chamada fica no JSON de `chamadas/`.
 - Decidir o conjunto antes de rodar para valer, porque com 1 sample o resultado não conclui nada.
 
 ### O que falta para fechar a A
@@ -240,6 +240,26 @@ Com o `main` no pré-passo, a B tem uma única sample para corrigir. Isso testa 
 - Repetir a A com o `run-A.sh` corrigido, para ter os tempos válidos.
 - Registrar as versões e a origem (URL e commit) dos forks `sourcemap-builder` e `typescript.java-ts.core`, que ainda não foram achadas.
 - Decidir o conjunto final (opção 1 ou 2) e a licença do repositório.
+
+## Primeira execução da abordagem B com Gemini (02/11/2026)
+
+A B foi rodada pelo `run-B.sh` a partir da execução A `A-20261102-162118`, com a API do Gemini (`agent-gemini.js`), modelo `gemini-3.8-flash`, temperatura 0, até 3 rodadas por repetição. Pasta de resultados: `B-20261102-174713`.
+
+### Resultado
+
+- Sample corrigida: `IntraproceduralIndirectSource`, a única comparável que a A não levou a L3.
+- Repetições: 1 e 3 chegaram a L3 na primeira rodada. A repetição 2 foi invalidada: a API respondeu 503 nas 8 tentativas (cerca de 27 min) e não houve resposta do modelo para avaliar.
+- Correção feita: a mesma nas duas, uma linha. `console.info(y)` virou `process.stdout.write(y.toString())`, para reproduzir o `System.out.print` sem quebra de linha. Os dois JS finais têm o mesmo SHA-256 e `literal_suspeito` deu falso, então a saída não foi escrita como texto fixo.
+- Custo: 2.302 e 2.217 tokens no total (1.156 de entrada, cerca de 585 de saída e 562 e 475 de raciocínio). O `candidatesTokenCount` não inclui o raciocínio, então o custo é o `totalTokenCount`.
+- Tempo: 300 s e 803 s por repetição, mas isso inclui as esperas de retry por causa dos 503, então não mede o modelo. O script passou a gravar `ms_resposta`, a latência da última tentativa.
+
+### Como ler
+
+- Nas 6 samples comparáveis, A teve 5 de 6 em L3 e B teve 6 de 6. As 5 que a A já acertava não foram tocadas pela IA.
+- As duas repetições válidas deram o mesmo JS, porque a temperatura é 0. Elas não são independentes: contam como 1 evidência de que o modelo corrige essa sample, não como 2.
+- Com uma sample e uma troca de `print`, o resultado não separa A de B nem permite comparar com a C. Ele mostra que o harness funciona de ponta a ponta com o Gemini e que as métricas saem.
+- Modelo e prompt: o hash do `prompt-B.txt` está em `config.txt` da execução; o `gemini-3.8-flash` pode mudar com o tempo, então a data da execução faz parte do registro.
+- Pasta `B-20261102-174210` (primeira tentativa): inválida, só houve erros 503 e 429 da API.
 
 ## Ameaças à validade
 
