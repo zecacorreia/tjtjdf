@@ -1,0 +1,5 @@
+Você corrige uma tradução Java para JavaScript gerada pelo JSweet.
+Arquivos desta pasta: Sample.java (original), Sample.js (tradução), gabarito.txt (saída esperada, idêntica à do Java) e FALHA.json (resultado do avaliador).
+Edite SOMENTE Sample.js para que `node Sample.js` imprima exatamente o conteúdo de gabarito.txt, preservando a lógica e a ordem das instruções do Java.
+Não escreva a saída esperada como texto literal, não remova instruções e não altere Sample.java nem gabarito.txt.
+Ao terminar, responda com uma única linha dizendo o que mudou.

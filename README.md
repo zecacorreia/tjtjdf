@@ -26,6 +26,7 @@ Em andamento. Até agora:
 | `estudo/resultados/` | Logs e resumos das execuções |
 | `estudo/*.log` | Logs das execuções do JSweet nos testes de DF e nas samples |
 | `jsweet-quickstart/` | `pom.xml` ajustado e a reescrita Java sem Soot (`quickstart/dataflow`), a partir do quickstart do JSweet (Apache-2.0, `LICENSE` incluída) |
+| `harness/` | Pré-passo, gabarito do Java, avaliador (L1 a L3) e scripts das abordagens A e B para rodar em Docker (veja `harness/README.md`) |
 
 ## Dependências de terceiros (não incluídas)
 
