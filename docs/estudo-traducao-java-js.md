@@ -230,10 +230,9 @@ Com o `main` no pré-passo, a B tem uma única sample para corrigir. Isso testa 
 ### O que falta para executar a B
 
 - A IA da B passou a ser o Gemini, chamado pela API (`agent-gemini.js`), no lugar da CLI do Claude. A B anterior, feita com o Claude Sonnet 5.5, fica registrada como outra execução e não entra na comparação.
-- Definir `GEMINI_API_KEY` e `GEMINI_MODEL` no terminal onde o container sobe; `node agent-gemini.js --list` mostra os modelos disponíveis para a chave.
-- Testar uma chamada real: até aqui o script só foi testado contra um servidor falso. Conferir se o bloco ```js da resposta é extraído e se `usageMetadata` traz os tokens.
-- Fixar o modelo e a temperatura 0; o hash do prompt completo de cada chamada fica no JSON de `chamadas/`.
-- Decidir o conjunto antes de rodar para valer, porque com 1 sample o resultado não conclui nada.
+- Feito: `GEMINI_API_KEY` e `GEMINI_MODEL` definidos, chamada real testada e primeira B executada (veja a seção abaixo). Modelo usado: `gemini-3.8-flash`; o `gemini-2.5-pro` não está mais disponível para contas novas e o `gemini-3.1-pro-preview` exige faturamento.
+- Falta repetir a B com `ms_resposta` gravado, para ter a latência do modelo sem as esperas por erro 503.
+- Falta decidir o conjunto antes de rodar para valer, porque com 1 sample o resultado não conclui nada.
 
 ### O que falta para fechar a A
 

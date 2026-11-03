@@ -8,22 +8,27 @@ Estudo que compara três formas de traduzir casos de teste de Java para JavaScri
 
 O estudo replica a etapa de tradução do artigo *Semantic conflict detection via dynamic analysis* (Moraes, Borba e Da Silva, SBLP 2024), que trata de overriding assignment (OA). O PDF do artigo não está neste repositório.
 
-## Estado (01/11/2026)
+## Estado (03/11/2026)
 
 Em andamento. Até agora:
 
-- Os testes de DF do Soot não geram JavaScript no JSweet (dependem de Soot e JUnit); a unidade de tradução do estudo passou a ser as classes `sample`.
-- As 9 samples escolhidas transpilam sem erro.
-- A abordagem A foi executada em parte e a B foi feita por uma sessão do Claude Sonnet 5.5, sem as métricas planejadas; a C não foi iniciada.
+- Os testes de DF do Soot não geram JavaScript no JSweet (dependem de Soot e JUnit); a unidade de tradução do estudo passou a ser as classes `sample`, com o gabarito vindo da execução do Java.
+- **A (só JSweet):** rodada no Docker (`estudo/resultados-harness/A-20261102-162118`). As 9 samples transpilam e executam; nas 6 samples com saída comparável, 5 saem idênticas ao Java (L3). Os tempos da repetição 1 são inválidos e a A precisa ser repetida.
+- **B (JSweet + IA):** rodada com o Gemini (`gemini-3.8-flash`) em `estudo/resultados-harness/B-20261102-174713`. A IA corrigiu a única sample que a A errava (troca de `print`), nas 2 repetições válidas de 3, com 2.217 a 2.302 tokens por repetição. É uma amostra de uma sample, então prova o harness e as métricas, mas não compara A com B. A pasta `B-20261102-174210` é uma tentativa inválida (erros 503 e 429 da API).
+- **C (só IA):** não iniciada.
+- Uma B anterior, feita à mão por uma sessão do Claude Sonnet 5.5, não tem as métricas planejadas e não entra na comparação.
 - Os scripts de `estudo/js-corrigido/medicao/` foram reexecutados e reproduziram os números do relatório (log em `estudo/resultados/reexecucao-medicao-2026-11-01.txt`).
+
+Próximas decisões: ampliar o conjunto de samples (as de `pessimistic/`) ou usar a reescrita `dataflow` como segunda unidade de tradução; repetir a A para ter tempos válidos; rodar a C.
 
 ## Conteúdo
 
 | Pasta | O que tem |
 | --- | --- |
-| `docs/` | Relatório do estudo (exportado do Claude Doc) |
+| `docs/` | Relatório do estudo (cópia em Markdown do Claude Doc) e a planilha de coleta das abordagens A e B |
 | `estudo/js-corrigido/` | JavaScript da reescrita `dataflow` corrigido, `CORRECOES.md` e os scripts de medição (`medicao/`) |
 | `estudo/resultados/` | Logs e resumos das execuções |
+| `estudo/resultados-harness/` | Saídas do harness: execução A, execução B válida e uma tentativa B inválida (`INVALIDA.txt`) |
 | `estudo/*.log` | Logs das execuções do JSweet nos testes de DF e nas samples |
 | `jsweet-quickstart/` | `pom.xml` ajustado e a reescrita Java sem Soot (`quickstart/dataflow`), a partir do quickstart do JSweet (Apache-2.0, `LICENSE` incluída) |
 | `harness/` | Pré-passo, gabarito do Java, avaliador (L1 a L3) e scripts das abordagens A e B para rodar em Docker (veja `harness/README.md`) |
