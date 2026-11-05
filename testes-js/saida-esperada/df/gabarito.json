@@ -1,0 +1,65 @@
+{
+ "ArrayDataFlowSample": {
+  "saida": "1\n2\n3\n4\n10\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "ArrayIndirectDataFlowSample": {
+  "saida": "0\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "ConfluenceWithTransitivitySample": {
+  "saida": "14\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "DoubleSourceSample": {
+  "saida": "[Ljava.lang.String;@d716361\n30\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": false,
+  "vazio": false
+ },
+ "IntraproceduralDataFlow": {
+  "saida": "100\n100\n10\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "IntraproceduralIndirectSource": {
+  "saida": "0\n12\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "SourceSinkMethodCallSample": {
+  "saida": "3\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "SourceSinkVariableAttributionSample": {
+  "saida": "",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": true
+ },
+ "SourceSinkVariableAttributionWithAutoIncrement": {
+  "saida": "",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": true
+ }
+}

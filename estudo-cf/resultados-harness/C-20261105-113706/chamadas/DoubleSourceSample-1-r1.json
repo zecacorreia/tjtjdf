@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 3706,
+ "ms_resposta": 3706,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "2080ec7be5a6bff75a7d3c870be878b11c4fea4412c02bd55b23e680066384a8",
+ "uso": {
+  "promptTokenCount": 339,
+  "candidatesTokenCount": 413,
+  "thoughtsTokenCount": 1029,
+  "totalTokenCount": 1781
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of DoubleSourceSample.java to Node.js (no external libraries)\n\nfunction javaArrayToString(arr) {\n    // Simulate Java's default toString for a String[]:\n    // class name \"[Ljava.lang.String;\" followed by '@' and a hex hash code.\n    // The hash is derived from the contents to be deterministic across runs.\n    let hash = 0;\n    for (let i = 0; i < arr.length; i++) {\n        const s = String(arr[i]);\n        for (let j = 0; j < s.length; j++) {\n            hash = ((hash * 31) + s.charCodeAt(j)) | 0; // 32‑bit signed overflow like Java's int\n        }\n    }\n    // Convert to unsigned 32‑bit and then to hex, matching Java's positive hash representation.\n    hash = hash >>> 0;\n    return \"[Ljava.lang.String;@\" + hash.toString(16);\n}\n\n// Main function replicating DoubleSourceSample.main\nfunction main() {\n    // Simulate Java's String[] args (skip node executable and script name)\n    const args = process.argv.slice(2);\n\n    // int x = 10; int y = 20;\n    let x = 10;\n    let y = 20;\n\n    // x = x + 1;   // left\n    x = x + 1;\n\n    // System.out.println(args);\n    // println adds a newline, so we use process.stdout.write\n    process.stdout.write(javaArrayToString(args) + \"\\n\");\n\n    // y = y - 1;   // right\n    y = y - 1;\n\n    // System.out.println(x + y);\n    // console.log adds a newline automatically\n    console.log(x + y);\n}\n\n// Invoke main when the script is executed\nmain();\n```\n\n*Tradução completa de DoubleSourceSample.java para Node.js.*"
+}

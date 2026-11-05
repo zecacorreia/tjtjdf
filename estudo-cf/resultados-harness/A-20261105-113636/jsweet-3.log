@@ -1,0 +1,60 @@
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:415 - no configuration file found at /tmp/qs/jsweetconfig.json
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:520 - creating transpiler version 3.1.0 (build date: 2021-04-21 20:24:55)
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:522 - current dir: /tmp/qs/.
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:523 - base directory: /tmp/qs
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:524 - working directory: /tmp/qs/.jsweet
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:525 - tsOut: /tmp/qs/target/ts - /tmp/qs/target/ts
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:526 - jsOut: /tmp/qs/target/js - /tmp/qs/target/js
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:527 - candyJsOut: /tmp/qs/webapp/candies
+2026-11-05 11:37:03.003 INFO  JSweetTranspiler:528 - factory: org.jsweet.transpiler.JSweetFactory@dc4a691
+2026-11-05 11:37:03.003 DEBUG JSweetTranspiler:529 - compile classpath: /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar
+2026-11-05 11:37:03.003 DEBUG JSweetTranspiler:530 - runtime classpath: /usr/share/maven/boot/plexus-classworlds-2.11.0.jar
+2026-11-05 11:37:03.003 DEBUG JSweetTranspiler:531 - extension directory: /tmp/qs/jsweet_extension
+2026-11-05 11:37:03.003 INFO  CandyProcessor:123 - candies processor classpath: /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar
+2026-11-05 11:37:03.003 INFO  CandyProcessor:141 - extracted candies directory: /tmp/qs/webapp/candies
+2026-11-05 11:37:03.003 DEBUG ProcessUtil:67 - extra path: 
+2026-11-05 11:37:03.003 INFO  ProcessUtil:138 - cannot find tsc - searching in /root/.jsweet.v3-node_modules
+2026-11-05 11:37:04.004 INFO  CandyProcessor:226 - 2 candies found in classpath
+2026-11-05 11:37:04.004 INFO  CandyProcessor:163 - candies are up to date
+2026-11-05 11:37:04.004 DEBUG JavaCompilationComponents:106 - charset: UTF-8
+2026-11-05 11:37:04.004 DEBUG JavaCompilationComponents:107 - strict mode: false
+2026-11-05 11:37:04.004 INFO  JavaCompilationComponents:122 - creating JavaCompiler task with options: JavaCompilerOptions: [--module-path, /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar, -cp, /tmp/qs/jsweet_extension:/root/.m2/repository/org/jsweet/candies/jquery/1.10.0-20170726/jquery-1.10.0-20170726.jar:/root/.m2/repository/org/jsweet/jsweet-core/6.3.0/jsweet-core-6.3.0.jar, -Xlint:path, -encoding, UTF-8]
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ConfluenceBaseSample2.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ConfluenceBaseSample2.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample2.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/MultipleConfluenceSample.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/MultipleConfluenceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/MultipleConfluenceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/InterproceduralConfluenceSample.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/InterproceduralConfluenceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/InterproceduralConfluenceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/DoubleSourceSample.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/DoubleSourceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:951 - scanning /tmp/qs/src/main/java/br/unb/cic/analysis/samples/ConfluenceBaseSample.java...
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:977 - output file: br/unb/cic/analysis/samples/ConfluenceBaseSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:1002 - created /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample.ts
+2026-11-05 11:37:04.004 INFO  JSweetTranspiler:857 - ts2js on org.jsweet.transpiler.TypeScript2JavaScriptWithTsserverTranspiler@4eaf7902 sourceFiles=6
+2026-11-05 11:37:04.004 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:47 - ts2js with tsserver: [/tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample2.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/MultipleConfluenceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/InterproceduralConfluenceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample.ts, /tmp/qs/.jsweet/candies/typings/META-INF/resources/typings/jquery/1.10.0-20170726/bundle.d.ts]
+2026-11-05 11:37:04.004 INFO  TypeScript2JavaScriptWithTsserverTranspiler:75 - launching tsserver compilation : 
+compilerOptions=ts.cmd.tsc.CompilerOptions@4751e8b9 
+sourcesFilePaths=[/tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample2.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/MultipleConfluenceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/InterproceduralConfluenceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/DoubleSourceSample.ts, /tmp/qs/target/ts/br/unb/cic/analysis/samples/ConfluenceBaseSample.ts, /tmp/qs/.jsweet/candies/typings/META-INF/resources/typings/jquery/1.10.0-20170726/bundle.d.ts]
+2026-11-05 11:37:04.004 INFO  TypeScript2JavaScriptWithTsserverTranspiler:173 - creating TypeScriptServiceClient
+2026-11-05 11:37:04.004 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:78 - tsserver client built
+2026-11-05 11:37:04.004 INFO  TypeScript2JavaScriptWithTsserverTranspiler:83 - open external project: /tmp/qs/target/ts
+2026-11-05 11:37:04.004 DEBUG TypeScript2JavaScriptWithTsserverTranspiler:89 - tsserver project opened: /tmp/qs/target/ts
+2026-11-05 11:37:05.005 INFO  TypeScript2JavaScriptWithTsserverTranspiler:107 - tsserver project compiled: /tmp/qs/target/ts
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ConfluenceBaseSample2.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/MultipleConfluenceSample.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/InterproceduralConfluenceSample.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ConfluenceWithTransitivitySample.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/DoubleSourceSample.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:1321 - js output file: /tmp/qs/target/js/br/unb/cic/analysis/samples/ConfluenceBaseSample.js
+2026-11-05 11:37:05.005 INFO  JSweetTranspiler:841 - transpilation process finished in 1488 ms 
+> java2ts: 473.602899ms
+> ts2js: 965.829422ms
+
+dispose client - process=ts.nodejs.NodejsProcess@71188a94

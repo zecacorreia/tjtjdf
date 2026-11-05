@@ -1,0 +1,7 @@
+sample,acao,linha_inserida,trecho
+ConfluenceBaseSample,main_acrescentado,26,"System.out.println(new ConfluenceBaseSample().countFixes());"
+ConfluenceBaseSample2,main_acrescentado,14,"new ConfluenceBaseSample2().m();"
+ConfluenceWithTransitivitySample,main_acrescentado,22,"new ConfluenceWithTransitivitySample().foo();"
+DoubleSourceSample,ja_tinha_main,,
+InterproceduralConfluenceSample,main_acrescentado,22,"new InterproceduralConfluenceSample().interproceduralSample();"
+MultipleConfluenceSample,main_acrescentado,21,"new MultipleConfluenceSample().multipleConfluencesToTheSameLine();"

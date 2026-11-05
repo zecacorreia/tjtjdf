@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 179052,
+ "ms_resposta": 179052,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "f88c7bc833dd84792384ab474c4e7e5f0c313eaefe3e94f91cdba76ba88d4da4",
+ "uso": {
+  "promptTokenCount": 358,
+  "candidatesTokenCount": 139,
+  "thoughtsTokenCount": 251,
+  "totalTokenCount": 748
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample2 (no output)\n\nclass ConfluenceBaseSample2 {\n    m() {\n        let x = 1; // LEFT\n        let base = 1;\n        let y = 1; // RIGHT\n        let z;\n        if (x + y > 1) {\n            z = 1;\n        } else {\n            z = 0;\n        }\n    }\n}\n\nfunction main() {\n    new ConfluenceBaseSample2().m();\n}\n\nmain();\n```\nTranslating the Java class to an equivalent Node.js class with identical (no) output."
+}

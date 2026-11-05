@@ -1,0 +1,44 @@
+{
+ "ConfluenceBaseSample": {
+  "saida": "3\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "ConfluenceBaseSample2": {
+  "saida": "",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": true
+ },
+ "ConfluenceWithTransitivitySample": {
+  "saida": "14\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ },
+ "DoubleSourceSample": {
+  "saida": "[Ljava.lang.String;@d716361\n30\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": false,
+  "vazio": false
+ },
+ "InterproceduralConfluenceSample": {
+  "saida": "",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": true
+ },
+ "MultipleConfluenceSample": {
+  "saida": "1\n1\n1\n3\n",
+  "status": "ok",
+  "deterministico": true,
+  "portavel": true,
+  "vazio": false
+ }
+}

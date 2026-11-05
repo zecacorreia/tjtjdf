@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 3703,
+ "ms_resposta": 3703,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "2080ec7be5a6bff75a7d3c870be878b11c4fea4412c02bd55b23e680066384a8",
+ "uso": {
+  "promptTokenCount": 339,
+  "candidatesTokenCount": 347,
+  "thoughtsTokenCount": 1111,
+  "totalTokenCount": 1797
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of DoubleSourceSample.java to Node.js (no external libraries)\n\nfunction javaIdentityHashCode(obj) {\n    // Deterministic hash similar to Java's identityHashCode for the purpose of this translation\n    const str = JSON.stringify(obj);\n    let hash = 0;\n    for (let i = 0; i < str.length; i++) {\n        hash = ((hash << 5) - hash) + str.charCodeAt(i);\n        hash |= 0; // keep as 32‑bit integer\n    }\n    // Convert to unsigned and then to hexadecimal, matching Java's toHexString output\n    return (hash >>> 0).toString(16);\n}\n\nfunction javaArrayToString(arr) {\n    // Mimic Java's default toString for a String[]: \"[Ljava.lang.String;@<hash>\"\n    return \"[Ljava.lang.String;@\" + javaIdentityHashCode(arr);\n}\n\nfunction main(args) {\n    // Replicate the Java variables and operations\n    let x = 10;\n    let y = 20;\n\n    x = x + 1; // left\n\n    // System.out.println(args);\n    console.log(javaArrayToString(args));\n\n    y = y - 1; // right\n\n    // System.out.println(x + y);\n    console.log(x + y);\n}\n\n// Obtain the command‑line arguments as Java would (excluding the script name)\nconst javaArgs = process.argv.slice(2);\n\n// Invoke the translated main method\nmain(javaArgs);\n```\n\n*Tradução completa do programa Java para JavaScript (Node.js) preservando lógica e saída.*"
+}

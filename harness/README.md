@@ -62,3 +62,14 @@ Outras variáveis: `LLM_TEMP` (padrão 0; `none` não envia o parâmetro, necess
 Para comparar B e C, use o mesmo modelo nas duas. Cada troca de modelo é uma execução nova, com provedor, modelo e temperatura gravados em `config.txt`.
 
 Códigos de saída do agente: 3 = API fora do ar (a repetição é invalidada), 4 = erro de configuração (chave ou modelo; a execução é abortada), 5 = cota diária esgotada (a execução é abortada).
+
+## Conjuntos de samples (DF e CF)
+
+Por padrão os scripts usam `estudo/` (conjunto DF). Para outro conjunto, aponte `ESTUDO` para a pasta dele (ela precisa de `samples-originais/`; o pré-passo e o gabarito são gerados pelo `run-A.sh`). O conjunto de confluência (CF) está em `_publicar/estudo-cf/`:
+
+```bash
+MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2" -e ESTUDO=/work/_publicar/estudo-cf -e REPS=3 tjtjdf-harness bash /work/_publicar/harness/run-A.sh
+```
+
+`publicar-js.js` copia o JS final de A, B e C para `testes-js/`; `testes-js/verificar.js` confere a saída contra o Java.
+

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Abordagem A (só JSweet) no container. Monte a pasta do projeto em /work e o ~/.m2 do host (com os forks) em /root/.m2.
 set -euo pipefail
-W=${W:-/work}; H=$W/_publicar/harness; E=$W/estudo
+W=${W:-/work}; H=$W/_publicar/harness; E=${ESTUDO:-$W/estudo}
 PREP=$E/samples-preparadas; GAB=$E/gabarito; REPS=${REPS:-3}; MVN_FLAGS=${MVN_FLAGS:--o -q}
 OUT=$E/resultados-harness/A-$(date +%Y%m%d-%H%M%S); mkdir -p "$OUT"
 echo "== ambiente"  | tee "$OUT/ambiente.txt"; { java -version 2>&1 | head -1; mvn -v | head -1; node -v; } | tee -a "$OUT/ambiente.txt"

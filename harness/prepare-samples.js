@@ -12,6 +12,11 @@ const ENTRY = {
   IntraproceduralIndirectSource: 'IntraproceduralIndirectSource o = new IntraproceduralIndirectSource(); o.m(); o.a();',
   SourceSinkVariableAttributionSample: 'new SourceSinkVariableAttributionSample().foo();',
   SourceSinkVariableAttributionWithAutoIncrement: 'new SourceSinkVariableAttributionWithAutoIncrement().foo();',
+  // conjunto CF (confluence flow). ConfluenceBaseSample nao imprime nada: o main imprime o retorno de countFixes() para a sample ter saida observavel
+  ConfluenceBaseSample: 'System.out.println(new ConfluenceBaseSample().countFixes());',
+  ConfluenceBaseSample2: 'new ConfluenceBaseSample2().m();',
+  InterproceduralConfluenceSample: 'new InterproceduralConfluenceSample().interproceduralSample();',
+  MultipleConfluenceSample: 'new MultipleConfluenceSample().multipleConfluencesToTheSameLine();',
 };
 
 // Índice da chave que fecha a classe `name` (o arquivo pode ter outras classes depois dela).

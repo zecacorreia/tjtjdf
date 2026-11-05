@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2228,
+ "ms_resposta": 2228,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "6fa5652aceddd3f9eb63ce989e31381dd5aa72dc0456cede8e25715ec26fee90",
+ "uso": {
+  "promptTokenCount": 437,
+  "candidatesTokenCount": 216,
+  "thoughtsTokenCount": 557,
+  "totalTokenCount": 1210
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\nclass ConfluenceBaseSample {\n  constructor() {\n    this.text = undefined;\n    this.words = undefined;\n    this.spaces = undefined;\n  }\n\n  countFixes() {\n    const confluenceBaseSample = new ConfluenceBaseSample();\n    confluenceBaseSample.countDupWhitespace(); // LEFT\n    confluenceBaseSample.countComments();\n    confluenceBaseSample.countDupWords(); // RIGHT\n    return confluenceBaseSample.spaces + confluenceBaseSample.words;\n  }\n\n  countDupWords() {\n    this.words = 2;\n  }\n\n  countComments() {\n    // intentionally empty, mirrors Java method\n  }\n\n  countDupWhitespace() {\n    this.spaces = 1;\n  }\n\n  static main() {\n    // System.out.println adds a newline\n    console.log(new ConfluenceBaseSample().countFixes());\n  }\n}\n\n// Execute the program\nConfluenceBaseSample.main();\n```\n\nTranslates the Java class to an equivalent Node.js script preserving logic and output."
+}

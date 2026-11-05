@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1636,
+ "ms_resposta": 1636,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "b089c850f29c328937003b95154b396bccf6889580bdc6f7c4e8e007dab2395e",
+ "uso": {
+  "promptTokenCount": 384,
+  "candidatesTokenCount": 207,
+  "thoughtsTokenCount": 307,
+  "totalTokenCount": 898
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of InterproceduralConfluenceSample.java to Node.js\n\nclass InterproceduralConfluenceSample {\n  constructor() {\n    this.counter = 0; // private int counter = 0;\n  }\n\n  interproceduralSample() {\n    // int x = 0; int y = 0;\n    let x = 0;\n    let y = 0;\n\n    x = x + 1; // source\n    y = y + 2; // sink\n\n    this.incrementCounter(x);\n    this.incrementCounter(y);\n  }\n\n  incrementCounter(value) {\n    // counter += value;\n    this.counter += value;\n  }\n}\n\n// Simulate the static main method\nfunction main() {\n  new InterproceduralConfluenceSample().interproceduralSample();\n}\n\n// Invoke main when the script is executed\nmain();\n```\n\n*Tradução completa da classe Java para JavaScript mantendo a lógica e sem gerar saída.*"
+}

@@ -4,7 +4,7 @@
 # Uso: run-B.sh <pasta-da-execucao-A> [repeticoes=3] [rodadas=3]
 set -euo pipefail
 A=${1:?pasta da execucao A}; REPS=${2:-3}; ROUNDS=${3:-3}
-W=${W:-/work}; H=$W/_publicar/harness; E=$W/estudo; GAB=$E/gabarito/gabarito.json; PREP=$E/samples-preparadas
+W=${W:-/work}; H=$W/_publicar/harness; E=${ESTUDO:-$W/estudo}; GAB=$E/gabarito/gabarito.json; PREP=$E/samples-preparadas
 OUT=$E/resultados-harness/B-$(date +%Y%m%d-%H%M%S); mkdir -p "$OUT/chamadas"
 PROMPT_SHA=$(sha256sum $H/prompt-B.txt | cut -d' ' -f1); echo "prompt_sha256=$PROMPT_SHA" | tee "$OUT/config.txt"
 printf "provedor=%s\nmodelo=%s\ntemperatura=%s\n" "${LLM_PROVIDER:-gemini}" "${LLM_MODEL:-${GEMINI_MODEL:?defina LLM_MODEL (ou GEMINI_MODEL)}}" "${LLM_TEMP:-${GEMINI_TEMP:-0}}" | tee -a "$OUT/config.txt"

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 179549,
+ "ms_resposta": 179549,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "bc8516ee045f6920046b2643b4c7012f514edbb1c5169a24a10cb57b5c3b35f9",
+ "uso": {
+  "promptTokenCount": 400,
+  "candidatesTokenCount": 198,
+  "thoughtsTokenCount": 346,
+  "totalTokenCount": 944
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of br.unb.cic.analysis.samples.MultipleConfluenceSample\nclass MultipleConfluenceSample {\n    multipleConfluencesToTheSameLine() {\n        let x = 0;\n        let y = 0;\n        let z = 0;\n\n        x = x + 1; // source\n\n        y = y + 1; // source\n\n        z = z + 1; // sink\n\n        // System.out.println → console.log (adds newline)\n        console.log(x);\n        console.log(y);\n        console.log(z);\n        console.log(x + y + z);\n    }\n\n    static main() {\n        new MultipleConfluenceSample().multipleConfluencesToTheSameLine();\n    }\n}\n\n// invoke the main method, as Java would do\nMultipleConfluenceSample.main();\n```\n\n*Tradução completa de MultipleConfluenceSample de Java para Node.js.*"
+}

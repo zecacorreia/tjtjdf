@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1517,
+ "ms_resposta": 1517,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "a866914cf825252f4b846fd1a0fcf95a4aa877683aa474d7ec2052b3f5a8c7ae",
+ "uso": {
+  "promptTokenCount": 389,
+  "candidatesTokenCount": 198,
+  "thoughtsTokenCount": 285,
+  "totalTokenCount": 872
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceWithTransitivitySample.java to Node.js\n\nclass ConfluenceWithTransitivitySample {\n    foo() {\n        let x = 1;\n        let y = 2;\n        let z = 3;\n\n        x = 10;               // left\n\n        z = x + 1;\n\n        y++;                  // right\n\n        // addThese(z, y);\n        console.log(z + y);   // println → newline\n    }\n\n    // private int addThese(int a1, int a2){\n    //     return a1 + a2;\n    // }\n}\n\n// static main equivalent\nfunction main() {\n    new ConfluenceWithTransitivitySample().foo();\n}\n\n// invoke main when the script is executed\nif (require.main === module) {\n    main();\n}\n```\n\n*Tradução completa do programa Java para JavaScript mantendo a lógica e a estrutura.*"
+}

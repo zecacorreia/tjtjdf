@@ -25,6 +25,8 @@ Próximas decisões: ampliar o conjunto de samples (as de `pessimistic/`) ou usa
 
 | Pasta | O que tem |
 | --- | --- |
+| `testes-js/` | **JavaScript final de cada abordagem (A, B e C) pronto para usar**, com `verificar.js` e a saída esperada do Java |
+| `estudo-cf/` | Conjunto de confluência (CF): samples, pré-passo e gabarito; as execuções ficam em `estudo-cf/resultados-harness/` |
 | `docs/` | Relatório do estudo (cópia em Markdown do Claude Doc) e a planilha de coleta das abordagens A e B |
 | `estudo/js-corrigido/` | JavaScript da reescrita `dataflow` corrigido, `CORRECOES.md` e os scripts de medição (`medicao/`) |
 | `estudo/resultados/` | Logs e resumos das execuções |

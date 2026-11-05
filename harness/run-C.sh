@@ -4,7 +4,7 @@
 # Uso: run-C.sh [repeticoes=3] [rodadas=1]      (mesmo LLM_PROVIDER/LLM_MODEL/chave da B; use o mesmo modelo para comparar)
 set -euo pipefail
 REPS=${1:-3}; ROUNDS=${2:-1}
-W=${W:-/work}; H=$W/_publicar/harness; E=$W/estudo; GAB=$E/gabarito/gabarito.json; PREP=$E/samples-preparadas
+W=${W:-/work}; H=$W/_publicar/harness; E=${ESTUDO:-$W/estudo}; GAB=$E/gabarito/gabarito.json; PREP=$E/samples-preparadas
 OUT=$E/resultados-harness/C-$(date +%Y%m%d-%H%M%S); mkdir -p "$OUT/chamadas" "$OUT/js"
 export AGENT_MODE=traduzir
 echo "prompt_sha256=$(cat $H/prompt-C.txt $H/prompt-C-correcao.txt | sha256sum | cut -d' ' -f1)" | tee "$OUT/config.txt"

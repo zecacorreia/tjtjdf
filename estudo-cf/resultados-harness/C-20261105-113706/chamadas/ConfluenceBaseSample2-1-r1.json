@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1368,
+ "ms_resposta": 1368,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "f88c7bc833dd84792384ab474c4e7e5f0c313eaefe3e94f91cdba76ba88d4da4",
+ "uso": {
+  "promptTokenCount": 358,
+  "candidatesTokenCount": 173,
+  "thoughtsTokenCount": 246,
+  "totalTokenCount": 777
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample2 from Java to Node.js\n\nclass ConfluenceBaseSample2 {\n    m() {\n        let x = 1; // LEFT\n        let base = 1;\n        let y = 1; // RIGHT\n        let z;\n        if (x + y > 1) {\n            z = 1;\n        } else {\n            z = 0;\n        }\n        // No output required, matching the Java program's behavior\n    }\n}\n\n// Simulate the Java static main method\nfunction main() {\n    new ConfluenceBaseSample2().m();\n}\n\n// Invoke main when the script is executed\nmain();\n```\n\nTranslates the Java class and its main method to an equivalent Node.js script with identical (no) output."
+}

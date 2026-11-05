@@ -1,0 +1,6 @@
+ConfluenceBaseSample                             ok
+ConfluenceBaseSample2                            sem saida
+ConfluenceWithTransitivitySample                 ok
+DoubleSourceSample                               NAO PORTAVEL (identidade de objeto)
+InterproceduralConfluenceSample                  sem saida
+MultipleConfluenceSample                         ok

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2041,
+ "ms_resposta": 2041,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "6fa5652aceddd3f9eb63ce989e31381dd5aa72dc0456cede8e25715ec26fee90",
+ "uso": {
+  "promptTokenCount": 437,
+  "candidatesTokenCount": 387,
+  "thoughtsTokenCount": 322,
+  "totalTokenCount": 1146
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample from Java to Node.js\n\nclass ConfluenceBaseSample {\n    constructor() {\n        // fields correspond to the Java private members\n        this.text = undefined;\n        this.words = undefined;\n        this.spaces = undefined;\n    }\n\n    // public method countFixes()\n    countFixes() {\n        // create a fresh instance, exactly as in the Java version\n        const confluenceBaseSample = new ConfluenceBaseSample();\n\n        // invoke the three helper methods in the same order\n        confluenceBaseSample.countDupWhitespace(); // LEFT\n        confluenceBaseSample.countComments();\n        confluenceBaseSample.countDupWords();      // RIGHT\n\n        // return the sum of the two Integer fields (spaces + words)\n        // In Java they are Integer objects; here we just use numbers.\n        return confluenceBaseSample.spaces + confluenceBaseSample.words;\n    }\n\n    // private void countDupWords()\n    countDupWords() {\n        // Java does: this.words = new Integer(2);\n        this.words = 2;\n    }\n\n    // private void countComments()\n    countComments() {\n        // No operation – matches the empty Java method.\n    }\n\n    // private void countDupWhitespace()\n    countDupWhitespace() {\n        // Java does: this.spaces = new Integer(1);\n        this.spaces = 1;\n    }\n\n    // static main method equivalent\n    static main() {\n        // System.out.println adds a line break; console.log does the same.\n        console.log(new ConfluenceBaseSample().countFixes());\n    }\n}\n\n// invoke the main entry point when the script is executed\nConfluenceBaseSample.main();\n```\n\n*Tradução completa do programa Java para JavaScript (Node.js) preservando a lógica e a estrutura.*"
+}
