@@ -8,7 +8,12 @@ Avalia a tradução Java → JavaScript das 9 samples de DF, igual para A, B (e 
 | `gabarito.js` | Compila e executa as samples no Java (lançador normal, 3 vezes) e marca as que não são comparáveis: sem saída, não determinísticas ou com identidade de objeto da JVM (`Classe@hash`) |
 | `evaluate.js` | Nível L1 (gerou `.js`), L2 (executa sem exceção) e L3 (saída idêntica ao gabarito, comparação estrita), em JSONL |
 | `run-A.sh` | Abordagem A no container: pré-passo, gabarito, JSweet (várias repetições, com tempo) e avaliação |
-| `run-B.sh` | Abordagem B: pega as samples que a A não levou a L3 e chama o Gemini pela API, via `agent-gemini.js` (até 3 rodadas, N repetições), avaliando a cada rodada |
+| `run-B.sh` | Abordagem B: pega as samples que a A não levou a L3 e chama um LLM pela API, via `agent-llm.js` (até 3 rodadas, N repetições), avaliando a cada rodada |
+| `resumo.js` | Quadro-resumo de A e B em tabela (para apresentar) |
+| `reavaliar.js` | Reexecuta no Node os JS guardados da A e reconstrói o JS da B a partir do `.diff`, comparando com o gabarito do Java (sem Docker nem JSweet) |
+| `metricas-B.js` | Relatório de métricas de uma execução B: sucesso, rodadas, tokens, latência, erros da API, literal suspeito |
+| `run-C.sh` | Abordagem C: a IA traduz o `Sample.java` direto para JS (`AGENT_MODE=traduzir`, prompts `prompt-C*.txt`); `run-C.sh [reps=3] [rodadas=1]` |
+| `comparar.js` | Tabela A × B × C: `node comparar.js <pasta-A> --B pastaB1,pastaB2 --C pastaC1` |
 | `docker-run.ps1` | Sobe o container no Windows/PowerShell (`-Modo A` ou `-Modo B`); no Git Bash use o `docker run` abaixo |
 
 ## Estado dos testes (03/11/2026)
@@ -41,3 +46,19 @@ MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2"
 export GEMINI_API_KEY="..." GEMINI_MODEL="..."
 MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2" -e GEMINI_API_KEY -e GEMINI_MODEL tjtjdf-harness bash /work/_publicar/harness/run-B.sh /work/estudo/resultados-harness/A-<data> 3
 ```
+
+## Escolher o modelo (abordagem B e C)
+
+`agent-llm.js` fala com três tipos de API; o provedor e o modelo vêm de variáveis de ambiente, sem mexer em código:
+
+| `LLM_PROVIDER` | Serve para | Chave | Observação |
+| --- | --- | --- | --- |
+| `gemini` (padrão) | Google Gemini | `GEMINI_API_KEY` | `node agent-llm.js --list` mostra os modelos da chave |
+| `anthropic` | Claude | `ANTHROPIC_API_KEY` | Sem plano gratuito; o custo desta B é de centavos |
+| `openai` | OpenAI e qualquer API compatível (Groq, OpenRouter, DeepSeek, Mistral, Ollama local) | `OPENAI_API_KEY` ou `LLM_API_KEY` | Nas compatíveis, defina `LLM_BASE`; no Ollama local a chave pode ficar vazia |
+
+Outras variáveis: `LLM_TEMP` (padrão 0; `none` não envia o parâmetro, necessário em alguns modelos de raciocínio), `LLM_MAX_TOKENS` e `LLM_TENTATIVAS`. O campo `uso` das chamadas usa sempre os nomes do Gemini (`promptTokenCount`, `candidatesTokenCount`, `thoughtsTokenCount`, `totalTokenCount`), com a conversão feita para os outros provedores; só o Gemini e os modelos de raciocínio da OpenAI informam tokens de raciocínio separados.
+
+Para comparar B e C, use o mesmo modelo nas duas. Cada troca de modelo é uma execução nova, com provedor, modelo e temperatura gravados em `config.txt`.
+
+Códigos de saída do agente: 3 = API fora do ar (a repetição é invalidada), 4 = erro de configuração (chave ou modelo; a execução é abortada), 5 = cota diária esgotada (a execução é abortada).

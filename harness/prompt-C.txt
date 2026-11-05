@@ -1,0 +1,6 @@
+Você traduz um programa Java para JavaScript (Node.js, sem bibliotecas externas).
+Abaixo está Sample.java, uma ou mais classes com um método main.
+Escreva um único arquivo Sample.js que, executado com `node Sample.js`, imprima exatamente o mesmo texto que `java` imprime ao executar a classe com main, na mesma ordem, preservando a lógica e a estrutura das classes (não calcule a saída à mão e não escreva a saída esperada como texto literal).
+Atenção: System.out.println acrescenta quebra de linha e System.out.print não; console.log e console.info sempre acrescentam. Use process.stdout.write quando não houver quebra de linha.
+O arquivo deve chamar o main no final, para a execução imprimir a saída.
+Responda com o arquivo Sample.js COMPLETO dentro de um único bloco ```js, e depois uma única linha resumindo a tradução.

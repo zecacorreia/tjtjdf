@@ -1,0 +1,3 @@
+
+Uma tentativa anterior foi avaliada e falhou. Abaixo estão o Sample.js anterior, o gabarito.txt (saída esperada, idêntica à do Java) e o FALHA.json (resultado do avaliador).
+Corrija o Sample.js para que `node Sample.js` imprima exatamente o gabarito, sem escrevê-lo como texto literal. Responda com o Sample.js COMPLETO num único bloco ```js e uma linha dizendo o que mudou.
