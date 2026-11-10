@@ -30,7 +30,10 @@ for (const d of Bs) {
   const comp = Object.keys(a3), tot = comp.map(s => s in rb ? rb[s] : a3[s]);
   const reps = new Set(rows.map(r => r.rep)).size || 1;
   const L3 = avg(tot), tokRep = reps ? sum(c, x => x.uso?.totalTokenCount) / reps : 0;
-  linha(`B  JSweet+IA (${k.modelo || '?'})`, taxa(rowsA, 'L1'), taxa(rowsA, 'L2'), L3, n1(tokRep), n1(avg(c.map(x => x.ms_resposta).filter(Boolean)) / 1000) + ' s', `corrige só ${Object.keys(rb).length} sample(s); ${c.filter(x => x.literal_suspeito).length} literal suspeito`);
+  const rev = k.modo === 'revisao', ex = jl(path.join(d, 'execucoes.jsonl'));
+  const regr = Object.keys(a3).filter(s => a3[s] === 1 && s in rb && rb[s] < 1), alt = ex.filter(e => e.js_antes && e.js_depois && e.js_antes !== e.js_depois).length;
+  const obs = rev ? `REVISÃO de ${new Set(rows.map(r => r.sample)).size} sample(s); ${regr.length} regressão(ões)${regr.length ? ' (' + regr.join(', ') + ')' : ''}; ${alt} de ${ex.length} execuções devolveram JS diferente do original (inclui mudança só de espaço ou comentário)` : `corrige só ${Object.keys(rb).length} sample(s)`;
+  linha(`B${rev ? 'r' : ' '} JSweet+IA${rev ? ' revisão' : ''} (${k.modelo || '?'})`, taxa(rowsA, 'L1'), taxa(rowsA, 'L2'), L3, n1(tokRep), n1(avg(c.map(x => x.ms_resposta).filter(Boolean)) / 1000) + ' s', `${obs}; ${c.filter(x => x.literal_suspeito).length} literal suspeito`);
 }
 // C
 const Cs = opt('--C').filter(d => !invalida(d));

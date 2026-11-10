@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1618,
+ "ms_resposta": 1618,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "5fbd95a66ac77b9f116b1c1c889600d53158d614f43883b8c87c05aa312880dd",
+ "uso": {
+  "promptTokenCount": 854,
+  "candidatesTokenCount": 328,
+  "thoughtsTokenCount": 202,
+  "totalTokenCount": 1384
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    class MultipleConfluenceSample {\n                        multipleConfluencesToTheSameLine() {\n                            let x = 0;\n                            let y = 0;\n                            let z = 0;\n                            x = x + 1;\n                            y = y + 1;\n                            z = z + 1;\n                            console.info(x);\n                            console.info(y);\n                            console.info(z);\n                            console.info(x + y + z);\n                        }\n                        static main(args) {\n                            new MultipleConfluenceSample().multipleConfluencesToTheSameLine();\n                        }\n                    }\n                    samples.MultipleConfluenceSample = MultipleConfluenceSample;\n                    MultipleConfluenceSample[\"__class\"] = \"br.unb.cic.analysis.samples.MultipleConfluenceSample\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.MultipleConfluenceSample.main(null);\n```\nsem alterações"
+}

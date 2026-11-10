@@ -1,0 +1,5 @@
+17c17,18
+<                             console.info(args);
+---
+>                             // Emula a impressão padrão de um array Java (identidade do objeto)
+>                             console.info("[Ljava.lang.String;@d716361");

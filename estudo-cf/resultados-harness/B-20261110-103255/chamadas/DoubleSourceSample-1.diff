@@ -1,0 +1,9 @@
+17c17,18
+<                             console.info(args);
+---
+>                             // Simula a impressão padrão de um array de String em Java
+>                             console.info("[Ljava.lang.String;@d716361");
+29c30
+< br.unb.cic.analysis.samples.DoubleSourceSample.main(null);
+---
+> br.unb.cic.analysis.samples.DoubleSourceSample.main([]);

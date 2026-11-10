@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2625,
+ "ms_resposta": 2625,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "95b3a0fc9e1da9f4a44ceec0d2793261a92ae7ccf1621a72296085adb44fe729",
+ "uso": {
+  "promptTokenCount": 979,
+  "candidatesTokenCount": 424,
+  "thoughtsTokenCount": 271,
+  "totalTokenCount": 1674
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    class ConfluenceBaseSample {\n                        constructor() {\n                            if (this.text === undefined) {\n                                this.text = null;\n                            }\n                            if (this.words === undefined) {\n                                this.words = null;\n                            }\n                            if (this.spaces === undefined) {\n                                this.spaces = null;\n                            }\n                        }\n                        countFixes() {\n                            const confluenceBaseSample = new ConfluenceBaseSample();\n                            confluenceBaseSample.countDupWhitespace(); // LEFT\n                            confluenceBaseSample.countComments();\n                            confluenceBaseSample.countDupWords(); // RIGHT\n                            return confluenceBaseSample.spaces + confluenceBaseSample.words;\n                        }\n                        /*private*/ countDupWords() {\n                            this.words = new Number(2).valueOf();\n                        }\n                        /*private*/ countComments() {\n                        }\n                        /*private*/ countDupWhitespace() {\n                            this.spaces = new Number(1).valueOf();\n                        }\n                        static main(args) {\n                            console.info(new ConfluenceBaseSample().countFixes());\n                        }\n                    }\n                    samples.ConfluenceBaseSample = ConfluenceBaseSample;\n                    ConfluenceBaseSample[\"__class\"] = \"br.unb.cic.analysis.samples.ConfluenceBaseSample\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.ConfluenceBaseSample.main(null);\n```\nsem alterações"
+}

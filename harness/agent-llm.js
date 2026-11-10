@@ -48,7 +48,7 @@ const msgErro = j => JSON.stringify(j.error || j).slice(0, 400);
   const oldJs = tem('Sample.js') ? rd('Sample.js') : '';
   let prompt;
   if (!C) {
-    const instr = fs.readFileSync(path.join(__dirname, 'prompt-B.txt'), 'utf8');
+    const instr = fs.readFileSync(path.join(__dirname, process.env.PROMPT_FILE || 'prompt-B.txt'), 'utf8');
     prompt = `${instr}\n\n=== Sample.java ===\n${rd('Sample.java')}\n\n=== Sample.js ===\n${oldJs}\n\n=== gabarito.txt (saída esperada) ===\n${rd('gabarito.txt')}\n\n=== FALHA.json (resultado do avaliador) ===\n${rd('FALHA.json')}\n`;
   } else {
     prompt = fs.readFileSync(path.join(__dirname, 'prompt-C.txt'), 'utf8') + `\n=== Sample.java ===\n${rd('Sample.java')}\n`;

@@ -14,6 +14,7 @@ Avalia a tradução Java → JavaScript das 9 samples de DF, igual para A, B (e 
 | `metricas-B.js` | Relatório de métricas de uma execução B: sucesso, rodadas, tokens, latência, erros da API, literal suspeito |
 | `run-C.sh` | Abordagem C: a IA traduz o `Sample.java` direto para JS (`AGENT_MODE=traduzir`, prompts `prompt-C*.txt`); `run-C.sh [reps=3] [rodadas=1]` |
 | `comparar.js` | Tabela A × B × C: `node comparar.js <pasta-A> --B pastaB1,pastaB2 --C pastaC1` |
+| `jsweet-lote.sh` | Roda o JSweet (A) em lote nos conjuntos DF e CF e imprime um resumo por conjunto; `jsweet-lote-docker.sh` é o atalho para o Git Bash |
 | `docker-run.ps1` | Sobe o container no Windows/PowerShell (`-Modo A` ou `-Modo B`); no Git Bash use o `docker run` abaixo |
 
 ## Estado dos testes (03/11/2026)
@@ -72,4 +73,25 @@ MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2"
 ```
 
 `publicar-js.js` copia o JS final de A, B e C para `testes-js/`; `testes-js/verificar.js` confere a saída contra o Java.
+
+### JSweet em lote (DF e CF)
+
+```bash
+cd /c/Users/italo/github/tjtjdf
+bash _publicar/harness/jsweet-lote-docker.sh                      # DF e CF, 3 repetições
+CONJUNTOS=cf REPS=1 bash _publicar/harness/jsweet-lote-docker.sh   # só o CF, 1 repetição
+PUBLICAR=1 bash _publicar/harness/jsweet-lote-docker.sh            # também copia o JS para testes-js/
+```
+
+Cada conjunto gera sua própria pasta `A-<data>` (DF em `estudo/resultados-harness/`, CF em `_publicar/estudo-cf/resultados-harness/`). Um conjunto que falha não interrompe o outro.
+
+### B em modo revisão (REVISAR_TODAS=1)
+
+Quando a A não erra nada (como no CF), a B comum não tem o que corrigir. No modo revisão a IA recebe **todas** as samples, mesmo as que a A acertou, com o prompt `prompt-B-revisao.txt` ("se já está igual ao gabarito, devolva sem alterar"), e o JS é reavaliado. Mede se a IA conserta o que está errado sem estragar o que estava certo (regressões). É um desenho diferente da B do DF e não deve ser comparado diretamente com ela. `comparar.js` mostra a linha como `Br` e conta regressões e execuções que alteraram o JS.
+
+```bash
+MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2" \
+  -e ESTUDO=/work/_publicar/estudo-cf -e REVISAR_TODAS=1 -e LLM_PROVIDER -e LLM_BASE -e LLM_MODEL -e LLM_API_KEY -e LLM_MAX_TOKENS -e INTERVALO_S=5 \
+  tjtjdf-harness bash /work/_publicar/harness/run-B.sh /work/_publicar/estudo-cf/resultados-harness/<A-pasta> 3
+```
 

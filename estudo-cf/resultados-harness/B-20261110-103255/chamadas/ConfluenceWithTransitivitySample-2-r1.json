@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 192407,
+ "ms_resposta": 192407,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "db65265fa668a6ad688806d67e79bb0cdb34addabd29a5733acb7315d556d7d2",
+ "uso": {
+  "promptTokenCount": 812,
+  "candidatesTokenCount": 307,
+  "thoughtsTokenCount": 333,
+  "totalTokenCount": 1452
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    class ConfluenceWithTransitivitySample {\n                        foo() {\n                            let x = 1;\n                            let y = 2;\n                            let z = 3;\n                            x = 10; //left\n                            z = x + 1;\n                            y++; //right\n                            console.info(z + y);\n                        }\n                        static main(args) {\n                            new ConfluenceWithTransitivitySample().foo();\n                        }\n                    }\n                    samples.ConfluenceWithTransitivitySample = ConfluenceWithTransitivitySample;\n                    ConfluenceWithTransitivitySample[\"__class\"] = \"br.unb.cic.analysis.samples.ConfluenceWithTransitivitySample\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.ConfluenceWithTransitivitySample.main(null);\n```\nsem alterações"
+}

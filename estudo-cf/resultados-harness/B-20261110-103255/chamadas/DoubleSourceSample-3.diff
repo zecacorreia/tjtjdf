@@ -1,0 +1,5 @@
+17c17,18
+<                             console.info(args);
+---
+>                             // Emula a impressão de um array String vazio em Java
+>                             console.info("[Ljava.lang.String;@d716361");
