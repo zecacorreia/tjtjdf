@@ -19,7 +19,7 @@ Avalia a tradução Java → JavaScript das 9 samples de DF, igual para A, B (e 
 
 ## Estado dos testes (03/11/2026)
 
-- **A de ponta a ponta:** `run-A.sh` rodou no Docker (`A-20261102-162118`, 3 repetições): 9/9 em L1 e L2 e 5/6 em L3 nas samples comparáveis. O tempo da repetição 1 saiu negativo (relógio do Docker Desktop); o script foi corrigido para usar `/proc/uptime` e a A deve ser repetida.
+- **A de ponta a ponta:** `run-A.sh` rodou no Docker (`A-20261102-162118`, 3 repetições): 9/9 em L1 e L2 e 5/6 em L3 nas samples comparáveis. O tempo da repetição 1 saiu negativo (relógio do Docker Desktop); o script foi corrigido para usar `/proc/uptime` e a A foi repetida em 10/11/2026 (`A-20261110-110232` no DF e `A-20261110-110302` no CF): tempos válidos, JSweet em cerca de 6 a 7 s por repetição (a repetição 1 do DF levou 12,12 s, partida a frio), resultados L1/L2/L3 idênticos aos anteriores.
 - **B de ponta a ponta:** `run-B.sh` rodou com a API do Gemini (`B-20261102-174713`, modelo `gemini-3.8-flash`, temperatura 0). Das 3 repetições, 2 chegaram a L3 e 1 foi invalidada porque a API respondeu 503 em todas as tentativas.
 - **Erros da API:** `agent-gemini.js` tenta de novo em 429 e 5xx (até 8 vezes, respeitando o "retry in Xs"). Se não houver resposta, sai com código 3 e a repetição vira `invalida_infra`, fora do `avaliacao.jsonl`. Entre chamadas o `run-B.sh` espera `INTERVALO_S` (13 s) por causa do limite do plano gratuito.
 - **Métricas por chamada** (em `chamadas/*.json`): tokens de entrada, de resposta e de raciocínio (o custo é o `totalTokenCount`), `ms` (inclui esperas de retry), `ms_resposta` (latência da última tentativa; só nas execuções feitas depois de 02/11/2026 17:20), hash do prompt, `literal_suspeito` e as tentativas transitórias.
@@ -94,4 +94,7 @@ MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/work" -v "$HOME/.m2:/root/.m2"
   -e ESTUDO=/work/_publicar/estudo-cf -e REVISAR_TODAS=1 -e LLM_PROVIDER -e LLM_BASE -e LLM_MODEL -e LLM_API_KEY -e LLM_MAX_TOKENS -e INTERVALO_S=5 \
   tjtjdf-harness bash /work/_publicar/harness/run-B.sh /work/_publicar/estudo-cf/resultados-harness/<A-pasta> 3
 ```
+
+Resultado no DF (10/11/2026, `B-20261110-110107`, `openai/gpt-oss-120b`, 3 repetições sobre `A-20261110-110232`): 18/18 nas comparáveis, 0 regressões, 15 de 27 execuções com JS diferente do original (inclui espaço e comentário), 3 de 27 com `literal_suspeito` (`DoubleSourceSample`, a IA escreveu o hash do Java no código), 14.744 tokens por repetição e mediana de 2,6 s por chamada. A média de 9,8 s que o `comparar.js` imprime inclui uma chamada de ~192 s causada por salto de relógio do Docker.
+
 

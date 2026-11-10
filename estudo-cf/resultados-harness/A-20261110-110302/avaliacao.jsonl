@@ -1,0 +1,18 @@
+{"sample":"ConfluenceBaseSample","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"a225c1cf7165bb169b2e332f76ca2c4b71bb6b8fc91dd3e343bb2280c4374dbc"}
+{"sample":"ConfluenceBaseSample2","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"66ed05ace41fff429db60c07e8f23902d989dcdd82c46ab67fd5dda007948f0a"}
+{"sample":"ConfluenceWithTransitivitySample","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"32c0e67243010a46bb2caad0c163b866f863a2bc0377f84eb148551572147aa4"}
+{"sample":"DoubleSourceSample","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"nao portavel (identidade de objeto)","js_sha256":"8da633a97344a07a66f5947c35c3494b2dd47564d51d2a4af8e2df6562811d92"}
+{"sample":"InterproceduralConfluenceSample","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"f9be9682a2af533d8c72f01f9cc072728aa9d4a689bbe177ea94dfd985b875f7"}
+{"sample":"MultipleConfluenceSample","abordagem":"A","rep":1,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"50f251d230c7c5353d4809def9407c8d05549399d445edbab641a5216a1ac617"}
+{"sample":"ConfluenceBaseSample","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"a225c1cf7165bb169b2e332f76ca2c4b71bb6b8fc91dd3e343bb2280c4374dbc"}
+{"sample":"ConfluenceBaseSample2","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"66ed05ace41fff429db60c07e8f23902d989dcdd82c46ab67fd5dda007948f0a"}
+{"sample":"ConfluenceWithTransitivitySample","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"32c0e67243010a46bb2caad0c163b866f863a2bc0377f84eb148551572147aa4"}
+{"sample":"DoubleSourceSample","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"nao portavel (identidade de objeto)","js_sha256":"8da633a97344a07a66f5947c35c3494b2dd47564d51d2a4af8e2df6562811d92"}
+{"sample":"InterproceduralConfluenceSample","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"f9be9682a2af533d8c72f01f9cc072728aa9d4a689bbe177ea94dfd985b875f7"}
+{"sample":"MultipleConfluenceSample","abordagem":"A","rep":2,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"50f251d230c7c5353d4809def9407c8d05549399d445edbab641a5216a1ac617"}
+{"sample":"ConfluenceBaseSample","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"a225c1cf7165bb169b2e332f76ca2c4b71bb6b8fc91dd3e343bb2280c4374dbc"}
+{"sample":"ConfluenceBaseSample2","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"66ed05ace41fff429db60c07e8f23902d989dcdd82c46ab67fd5dda007948f0a"}
+{"sample":"ConfluenceWithTransitivitySample","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"32c0e67243010a46bb2caad0c163b866f863a2bc0377f84eb148551572147aa4"}
+{"sample":"DoubleSourceSample","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"nao portavel (identidade de objeto)","js_sha256":"8da633a97344a07a66f5947c35c3494b2dd47564d51d2a4af8e2df6562811d92"}
+{"sample":"InterproceduralConfluenceSample","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":false,"comparavel":false,"motivo":"sem saida","js_sha256":"f9be9682a2af533d8c72f01f9cc072728aa9d4a689bbe177ea94dfd985b875f7"}
+{"sample":"MultipleConfluenceSample","abordagem":"A","rep":3,"L1":true,"L2":true,"L3":true,"comparavel":true,"js_sha256":"50f251d230c7c5353d4809def9407c8d05549399d445edbab641a5216a1ac617"}

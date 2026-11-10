@@ -1,0 +1,4 @@
+== ambiente
+openjdk version "11.0.32.1" 2026-08-18
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+v22.23.4
