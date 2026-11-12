@@ -23,3 +23,4 @@ done
 # o JSweet é determinístico? compara as repetições
 if [ "$REPS" -gt 1 ] && [ -d "$OUT/js-1" ] && [ -d "$OUT/js-2" ]; then diff -r "$OUT/js-1" "$OUT/js-2" > /dev/null && echo "JS gerado identico entre repeticoes" || echo "ATENCAO: JS gerado difere entre repeticoes"; fi
 echo "resultados em $OUT"
+node $H/exportar-planilha.js $W > /dev/null 2>&1 && echo "planilha atualizada: _publicar/docs/resultados-todas-execucoes.csv" || echo "aviso: nao consegui atualizar a planilha (rode node exportar-planilha.js)"

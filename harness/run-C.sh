@@ -37,3 +37,4 @@ for rep in $(seq 1 $REPS); do
   done
 done
 echo "resultados em $OUT (tokens por chamada em chamadas/*.json)"
+node $H/exportar-planilha.js $W > /dev/null 2>&1 && echo "planilha atualizada: _publicar/docs/resultados-todas-execucoes.csv" || echo "aviso: nao consegui atualizar a planilha (rode node exportar-planilha.js)"
