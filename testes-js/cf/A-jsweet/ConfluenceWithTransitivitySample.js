@@ -9,20 +9,23 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class ConfluenceWithTransitivitySample {
-                        foo() {
-                            let x = 1;
-                            let y = 2;
-                            let z = 3;
+                    var ConfluenceWithTransitivitySample = /** @class */ (function () {
+                        function ConfluenceWithTransitivitySample() {
+                        }
+                        ConfluenceWithTransitivitySample.prototype.foo = function () {
+                            var x = 1;
+                            var y = 2;
+                            var z = 3;
                             x = 10;
                             z = x + 1;
                             y++;
                             console.info(z + y);
-                        }
-                        static main(args) {
+                        };
+                        ConfluenceWithTransitivitySample.main = function (args) {
                             new ConfluenceWithTransitivitySample().foo();
-                        }
-                    }
+                        };
+                        return ConfluenceWithTransitivitySample;
+                    }());
                     samples.ConfluenceWithTransitivitySample = ConfluenceWithTransitivitySample;
                     ConfluenceWithTransitivitySample["__class"] = "br.unb.cic.analysis.samples.ConfluenceWithTransitivitySample";
                 })(samples = analysis.samples || (analysis.samples = {}));

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 4295,
+ "ms_resposta": 4295,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "3c6aec417e7f53f03a8d12aeebdf9965d7b7c0f3b2e5899a229cf76d19cf66a4",
+ "uso": {
+  "promptTokenCount": 406,
+  "candidatesTokenCount": 237,
+  "thoughtsTokenCount": 1562,
+  "totalTokenCount": 2205
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of DoubleSourceSample.java to ES5 JavaScript (Node.js)\n\nfunction DoubleSourceSample() {}\n\n/**\n * Simulates the Java main method.\n * @param {Array.<string>} args - Command‑line arguments (equivalent to Java's String[] args)\n */\nDoubleSourceSample.main = function (args) {\n    var x = 10;\n    var y = 20;\n\n    // left\n    x = x + 1;\n\n    // System.out.println(args);\n    // In Java this prints the array's default toString (e.g., [Ljava.lang.String;@hashcode).\n    // Using console.log reproduces the “print object + newline” behaviour.\n    console.log(args);\n\n    // right\n    y = y - 1;\n\n    // System.out.println(x + y);\n    console.log(x + y);\n};\n\n// Invoke the main method with the Node.js command‑line arguments (excluding “node” and script name)\nDoubleSourceSample.main(process.argv.slice(2));\n```\n\n*Tradução completa do programa Java para JavaScript ES5.*"
+}

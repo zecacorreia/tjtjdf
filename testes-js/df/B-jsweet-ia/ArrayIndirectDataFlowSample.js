@@ -9,14 +9,17 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class ArrayIndirectDataFlowSample {
-                        static main(args) {
-                            const arr = [0, 0, 0, 0, 0];
-                            arr[4] = 10;
-                            const b = arr[3];
-                            console.info(b);
+                    var ArrayIndirectDataFlowSample = /** @class */ (function () {
+                        function ArrayIndirectDataFlowSample() {
                         }
-                    }
+                        ArrayIndirectDataFlowSample.main = function (args) {
+                            var arr = [0, 0, 0, 0, 0];
+                            arr[4] = 10;
+                            var b = arr[3];
+                            console.info(b);
+                        };
+                        return ArrayIndirectDataFlowSample;
+                    }());
                     samples.ArrayIndirectDataFlowSample = ArrayIndirectDataFlowSample;
                     ArrayIndirectDataFlowSample["__class"] = "br.unb.cic.analysis.samples.ArrayIndirectDataFlowSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2640,
+ "ms_resposta": 2640,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "6d84bff0a459839d504799951ac5dbb4b5ecbdca9e046d694c93aacd880d2744",
+ "uso": {
+  "promptTokenCount": 467,
+  "candidatesTokenCount": 161,
+  "thoughtsTokenCount": 399,
+  "totalTokenCount": 1027
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\nfunction MultipleConfluenceSample() {\n}\n\nMultipleConfluenceSample.prototype.multipleConfluencesToTheSameLine = function () {\n    var x = 0;\n    var y = 0;\n    var z = 0;\n\n    x = x + 1; // source\n    y = y + 1; // source\n    z = z + 1; // sink\n\n    console.log(x);\n    console.log(y);\n    console.log(z);\n    console.log(x + y + z);\n};\n\nfunction main() {\n    new MultipleConfluenceSample().multipleConfluencesToTheSameLine();\n}\n\nmain();\n```\n\nTradução completa do programa Java para JavaScript ES5 mantendo a mesma lógica e saída."
+}

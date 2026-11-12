@@ -1,24 +1,27 @@
-// Sample.js – translation of ConfluenceBaseSample2 from Java to Node.js
+// Sample.js – translation of ConfluenceBaseSample2.java to ES5 JavaScript (Node.js)
 
-class ConfluenceBaseSample2 {
-    m() {
-        let x = 1; // LEFT
-        let base = 1;
-        let y = 1; // RIGHT
-        let z;
-        if (x + y > 1) {
-            z = 1;
-        } else {
-            z = 0;
-        }
-        // No output required, matching the Java program's behavior
-    }
+function ConfluenceBaseSample2() {
+    // constructor – no initialization needed
 }
 
-// Simulate the Java static main method
-function main() {
+// method m replicates the Java logic
+ConfluenceBaseSample2.prototype.m = function () {
+    var x = 1; // LEFT
+    var base = 1;
+    var y = 1; // RIGHT
+    var z;
+    if (x + y > 1) {
+        z = 1;
+    } else {
+        z = 0;
+    }
+    // No output required
+};
+
+// main function analogous to Java's public static void main(String[] args)
+function main(args) {
     new ConfluenceBaseSample2().m();
 }
 
-// Invoke main when the script is executed
-main();
+// invoke main with command‑line arguments (if any)
+main(process.argv.slice(2));

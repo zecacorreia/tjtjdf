@@ -1,48 +1,44 @@
-// Sample.js – translation of IntraproceduralIndirectSource.java to Node.js
+// Sample.js – translation of IntraproceduralIndirectSource.java to ES5 JavaScript
 
-class IntraproceduralIndirectSource {
-    m() {
-        let x = 1000;
-        x = this.random();               // source (left)
-        process.stdout.write(x + "\n");  // System.out.println(x)
+// MockClass definition
+function MockClass() {
+    this.a = 0;
+}
+MockClass.prototype.setA = function (a) {
+    this.a = a;
+};
+MockClass.prototype.getA = function () {
+    return this.a;
+};
 
-        const y = x + 1;
-        process.stdout.write(String(y)); // System.out.print(y) – no newline
-    }
+// IntraproceduralIndirectSource definition
+function IntraproceduralIndirectSource() {}
 
-    random() {
-        return 0;
-    }
+IntraproceduralIndirectSource.prototype.random = function () {
+    return 0;
+};
 
-    a() {
-        const mock = new MockClass();
+IntraproceduralIndirectSource.prototype.m = function () {
+    var x = 1000;
+    x = this.random();               // source (left)
+    console.log(x);                  // println -> adds newline
+    var y = x + 1;
+    process.stdout.write(y.toString()); // print -> no newline
+};
 
-        mock.setA(1);                     // source
+IntraproceduralIndirectSource.prototype.a = function () {
+    var mock = new MockClass();
+    mock.setA(1);                    // source
+    var y = mock.getA() + 1;
+    console.log(y);                  // sink (println)
+};
 
-        const y = mock.getA() + 1;
-        process.stdout.write(y + "\n");  // System.out.println(y)
-    }
-
-    static main() {
-        const o = new IntraproceduralIndirectSource();
-        o.m();
-        o.a();
-    }
+// main function – entry point
+function main() {
+    var o = new IntraproceduralIndirectSource();
+    o.m();
+    o.a();
 }
 
-class MockClass {
-    constructor() {
-        this.a = 0;
-    }
-
-    setA(a) {
-        this.a = a;
-    }
-
-    getA() {
-        return this.a;
-    }
-}
-
-// Execute the program
-IntraproceduralIndirectSource.main();
+// Execute main when the script is run
+main();

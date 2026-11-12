@@ -9,23 +9,26 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class ConfluenceBaseSample2 {
-                        m() {
-                            const x = 1;
-                            const base = 1;
-                            const y = 1;
-                            let z;
+                    var ConfluenceBaseSample2 = /** @class */ (function () {
+                        function ConfluenceBaseSample2() {
+                        }
+                        ConfluenceBaseSample2.prototype.m = function () {
+                            var x = 1;
+                            var base = 1;
+                            var y = 1;
+                            var z;
                             if (x + y > 1) {
                                 z = 1;
                             }
                             else {
                                 z = 0;
                             }
-                        }
-                        static main(args) {
+                        };
+                        ConfluenceBaseSample2.main = function (args) {
                             new ConfluenceBaseSample2().m();
-                        }
-                    }
+                        };
+                        return ConfluenceBaseSample2;
+                    }());
                     samples.ConfluenceBaseSample2 = ConfluenceBaseSample2;
                     ConfluenceBaseSample2["__class"] = "br.unb.cic.analysis.samples.ConfluenceBaseSample2";
                 })(samples = analysis.samples || (analysis.samples = {}));

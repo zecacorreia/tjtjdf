@@ -1,0 +1,5 @@
+prompt_sha256=c006289bf99933645a882c8d2af6e236057df33d95533e5d7875ab3e80797f44
+provedor=openai
+modelo=openai/gpt-oss-120b
+temperatura=0
+rodadas=1

@@ -21,7 +21,7 @@ for rep in $(seq 1 $REPS); do
       if [ $round -gt 1 ]; then
         [ -f $D/Sample.js ] || break
         cp $D/Sample.js $D/js/$s.js; ONLY=$s node $H/evaluate.js $D/js $GAB C $rep $D/av.jsonl >/dev/null; tail -1 $D/av.jsonl > $D/FALHA.json
-        if grep -q '"L3":true' $D/FALHA.json; then break; fi
+        if grep -q '"L3":true' $D/FALHA.json && ! grep -q '"ES5":false' $D/FALHA.json; then break; fi
       fi
       rc=0; node $H/agent-llm.js $D $OUT/chamadas/$s-$rep-r$round.json || rc=$?
       if [ "$rc" = "4" ]; then echo "Execucao invalida: erro de configuracao da API (chave, saldo ou modelo). Nao usar." > "$OUT/INVALIDA.txt"; echo "ABORTADO: erro de configuracao (veja a mensagem CONFIG acima)"; exit 4; fi

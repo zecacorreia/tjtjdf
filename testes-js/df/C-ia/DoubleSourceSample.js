@@ -1,42 +1,31 @@
-// Sample.js – translation of DoubleSourceSample.java to Node.js (no external libraries)
+// Sample.js – translation of DoubleSourceSample.java (ES5)
 
-const args = process.argv.slice(2); // Java's String[] args
+function DoubleSourceSample() {}
 
-// Simulate Java's System.identityHashCode for objects
-const _identityMap = new WeakMap();
-let _nextId = 0x123456; // arbitrary start value
+/**
+ * Simulates the Java main method.
+ * @param {Array.<string>} args - command‑line arguments (equivalent to Java's String[] args)
+ */
+DoubleSourceSample.main = function (args) {
+    // int x = 10;
+    var x = 10;
+    // int y = 20;
+    var y = 20;
 
-function identityHashCode(obj) {
-  if (!_identityMap.has(obj)) {
-    // assign a new incremental id
-    _identityMap.set(obj, ++_nextId);
-  }
-  return _identityMap.get(obj);
-}
+    // x = x + 1;   // left
+    x = x + 1;
 
-// Simulate Java's default toString for a String[] array
-function javaArrayToString(arr) {
-  // class descriptor for a String array in Java
-  const className = "[Ljava.lang.String;";
-  const hashHex = identityHashCode(arr).toString(16);
-  return className + "@" + hashHex;
-}
+    // System.out.println(args);
+    // In Java this prints the array object's default toString (e.g., [Ljava.lang.String;@hash).
+    // Here we simply output the array contents, which is the closest analogue in Node.
+    console.log(args);
 
-// Main method equivalent
-function main() {
-  let x = 10;
-  let y = 20;
+    // y = y - 1;   // right
+    y = y - 1;
 
-  x = x + 1; // left
+    // System.out.println(x + y);
+    console.log(x + y);
+};
 
-  // System.out.println(args);
-  process.stdout.write(javaArrayToString(args) + "\n");
-
-  y = y - 1; // right
-
-  // System.out.println(x + y);
-  process.stdout.write(String(x + y) + "\n");
-}
-
-// Invoke main
-main();
+// Invoke main with the arguments passed to the Node process (excluding "node" and script name)
+DoubleSourceSample.main(process.argv.slice(2));

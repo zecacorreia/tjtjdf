@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2205,
+ "ms_resposta": 2205,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "1cdeb59d2554f6a1f4eb16613b523ce7e39e5ca634ca966698b17521aad84db5",
+ "uso": {
+  "promptTokenCount": 425,
+  "candidatesTokenCount": 214,
+  "thoughtsTokenCount": 226,
+  "totalTokenCount": 865
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js - translation of ConfluenceBaseSample2 from Java to ES5 JavaScript (Node.js)\n\nfunction ConfluenceBaseSample2() {\n    // constructor (no initialization needed)\n}\n\n// method m replicates the Java method logic\nConfluenceBaseSample2.prototype.m = function () {\n    var x = 1;      // LEFT\n    var base = 1;\n    var y = 1;      // RIGHT\n    var z;\n    if (x + y > 1) {\n        z = 1;\n    } else {\n        z = 0;\n    }\n    // No output required\n};\n\n// main function equivalent to Java's public static void main\nfunction main(args) {\n    // args is ignored, matching Java signature\n    new ConfluenceBaseSample2().m();\n}\n\n// invoke main when the script is run\nmain([]);\n```\n\n*Tradução direta do código Java para JavaScript ES5, preservando classes, método e lógica sem gerar saída.*"
+}

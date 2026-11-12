@@ -1,35 +1,34 @@
-class ConfluenceBaseSample {
-  constructor() {
-    this.text = undefined;
-    this.words = undefined;
-    this.spaces = undefined;
-  }
+// Sample.js – translation of ConfluenceBaseSample from Java to ES5 JavaScript (Node.js)
 
-  countFixes() {
-    const confluenceBaseSample = new ConfluenceBaseSample();
-    confluenceBaseSample.countDupWhitespace(); // LEFT
-    confluenceBaseSample.countComments();
-    confluenceBaseSample.countDupWords(); // RIGHT
-    return confluenceBaseSample.spaces + confluenceBaseSample.words;
-  }
-
-  countDupWords() {
-    this.words = 2;
-  }
-
-  countComments() {
-    // intentionally empty, mirrors Java method
-  }
-
-  countDupWhitespace() {
-    this.spaces = 1;
-  }
-
-  static main() {
-    // System.out.println adds a newline
-    console.log(new ConfluenceBaseSample().countFixes());
-  }
+function ConfluenceBaseSample() {
+    this.text = null;
+    this.words = null;
+    this.spaces = null;
 }
 
-// Execute the program
-ConfluenceBaseSample.main();
+ConfluenceBaseSample.prototype.countFixes = function () {
+    var confluenceBaseSample = new ConfluenceBaseSample();
+    confluenceBaseSample.countDupWhitespace(); // LEFT
+    confluenceBaseSample.countComments();
+    confluenceBaseSample.countDupWords();      // RIGHT
+    return confluenceBaseSample.spaces + confluenceBaseSample.words;
+};
+
+ConfluenceBaseSample.prototype.countDupWords = function () {
+    this.words = new Number(2);
+};
+
+ConfluenceBaseSample.prototype.countComments = function () {
+    // intentionally empty
+};
+
+ConfluenceBaseSample.prototype.countDupWhitespace = function () {
+    this.spaces = new Number(1);
+};
+
+function main(args) {
+    console.log(new ConfluenceBaseSample().countFixes());
+}
+
+// invoke main
+main([]);

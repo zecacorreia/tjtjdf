@@ -9,11 +9,13 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class MultipleConfluenceSample {
-                        multipleConfluencesToTheSameLine() {
-                            let x = 0;
-                            let y = 0;
-                            let z = 0;
+                    var MultipleConfluenceSample = /** @class */ (function () {
+                        function MultipleConfluenceSample() {
+                        }
+                        MultipleConfluenceSample.prototype.multipleConfluencesToTheSameLine = function () {
+                            var x = 0;
+                            var y = 0;
+                            var z = 0;
                             x = x + 1;
                             y = y + 1;
                             z = z + 1;
@@ -21,11 +23,12 @@ var br;
                             console.info(y);
                             console.info(z);
                             console.info(x + y + z);
-                        }
-                        static main(args) {
+                        };
+                        MultipleConfluenceSample.main = function (args) {
                             new MultipleConfluenceSample().multipleConfluencesToTheSameLine();
-                        }
-                    }
+                        };
+                        return MultipleConfluenceSample;
+                    }());
                     samples.MultipleConfluenceSample = MultipleConfluenceSample;
                     MultipleConfluenceSample["__class"] = "br.unb.cic.analysis.samples.MultipleConfluenceSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

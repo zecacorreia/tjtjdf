@@ -9,7 +9,7 @@ const out = process.argv[3] || path.join(root, '_publicar', 'docs', 'resultados-
 const SETS = [['DF', path.join(root, 'estudo', 'resultados-harness')], ['CF', path.join(root, '_publicar', 'estudo-cf', 'resultados-harness')]];
 const jl = f => fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(l => l.trim()).map(l => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean) : [];
 const cfg = d => { const o = {}; const f = path.join(d, 'config.txt'); if (fs.existsSync(f)) for (const l of fs.readFileSync(f, 'utf8').split('\n')) { const i = l.indexOf('='); if (i > 0) o[l.slice(0, i)] = l.slice(i + 1).trim(); } return o; };
-const cols = ['conjunto', 'pasta', 'data_execucao', 'abordagem', 'modo', 'modelo', 'temperatura', 'valida', 'sample', 'rep', 'comparavel', 'L1_gerou', 'L2_executa', 'L3_saida_igual', 'rodadas', 'tokens_entrada', 'tokens_resposta', 'tokens_raciocinio', 'tokens_total', 'latencia_ms_resposta', 'literal_suspeito', 'tentativas_transitorias', 'jsweet_segundos_total', 'jsweet_ms', 'js_sha256', 'observacao'];
+const cols = ['conjunto', 'pasta', 'data_execucao', 'abordagem', 'modo', 'modelo', 'temperatura', 'valida', 'sample', 'rep', 'comparavel', 'L1_gerou', 'L2_executa', 'ES5', 'L3_saida_igual', 'rodadas', 'tokens_entrada', 'tokens_resposta', 'tokens_raciocinio', 'tokens_total', 'latencia_ms_resposta', 'literal_suspeito', 'tentativas_transitorias', 'jsweet_segundos_total', 'jsweet_ms', 'js_sha256', 'observacao'];
 const rows = [];
 for (const [conj, base] of SETS) {
   if (!fs.existsSync(base)) continue;
@@ -37,7 +37,7 @@ for (const [conj, base] of SETS) {
       const seg = t.segundos_total ?? t.segundos;
       const obs = (ab === 'A' && typeof seg === 'number' && seg < 0) ? 'tempo negativo (ajuste de relógio do Docker); resultado L1/L2/L3 válido' : '';
       rows.push({ conjunto: conj, pasta, data_execucao: data, abordagem: ab, modo, modelo: ab === 'A' ? '' : (c.modelo || ''), temperatura: ab === 'A' ? '' : (c.temperatura || ''), valida,
-        sample: a.sample, rep: a.rep, comparavel: a.comparavel ? 'sim' : 'não', L1_gerou: a.L1 ? 'sim' : 'não', L2_executa: a.L2 ? 'sim' : 'não',
+        sample: a.sample, rep: a.rep, comparavel: a.comparavel ? 'sim' : 'não', L1_gerou: a.L1 ? 'sim' : 'não', L2_executa: a.L2 ? 'sim' : 'não', ES5: a.ES5 === true ? 'sim' : a.ES5 === false ? 'não' : '',
         L3_saida_igual: a.comparavel ? (a.L3 ? 'sim' : 'não') : 'n/a', rodadas: ab === 'A' ? '' : (e.rodadas || o.rod || ''),
         tokens_entrada: o.ti ?? '', tokens_resposta: o.tr ?? '', tokens_raciocinio: o.tt ?? '', tokens_total: o.tot ?? '', latencia_ms_resposta: o.ms ?? '',
         literal_suspeito: o.rod ? (o.sus ? 'sim' : 'não') : '', tentativas_transitorias: o.tent ?? '',

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2652,
+ "ms_resposta": 2652,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "f8adeba5550ba9217255458d355f03661839228952ef72b41a864707b3e9d43e",
+ "uso": {
+  "promptTokenCount": 504,
+  "candidatesTokenCount": 245,
+  "thoughtsTokenCount": 736,
+  "totalTokenCount": 1485
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample from Java to ES5 JavaScript (Node.js)\n\nfunction ConfluenceBaseSample() {\n    this.text = null;\n    this.words = null;\n    this.spaces = null;\n}\n\nConfluenceBaseSample.prototype.countFixes = function () {\n    var confluenceBaseSample = new ConfluenceBaseSample();\n    confluenceBaseSample.countDupWhitespace(); // LEFT\n    confluenceBaseSample.countComments();\n    confluenceBaseSample.countDupWords();      // RIGHT\n    return confluenceBaseSample.spaces + confluenceBaseSample.words;\n};\n\nConfluenceBaseSample.prototype.countDupWords = function () {\n    this.words = new Number(2);\n};\n\nConfluenceBaseSample.prototype.countComments = function () {\n    // intentionally empty\n};\n\nConfluenceBaseSample.prototype.countDupWhitespace = function () {\n    this.spaces = new Number(1);\n};\n\nfunction main(args) {\n    console.log(new ConfluenceBaseSample().countFixes());\n}\n\n// invoke main\nmain([]);\n```\n\nTranslated the Java class to an ES5 constructor with prototype methods, preserving the original logic and printing the same result."
+}

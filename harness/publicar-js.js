@@ -28,7 +28,11 @@ if (B) {
   const dB = path.join(raiz, conj, 'B-jsweet-ia'); copiar(path.join(A, 'js-' + rep), dB);
   const dir = path.join(B, 'chamadas'); let n = 0;
   for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => /^(.+)-(\d+)\.diff$/.test(f)) : []) {
-    const [, s, r] = /^(.+)-(\d+)\.diff$/.exec(f); if (r !== rep) continue; const alvo = path.join(dB, s + '.js'); if (!fs.existsSync(alvo)) continue;
+    const [, s, r] = /^(.+)-(\d+)\.diff$/.exec(f); if (r !== rep) continue;
+    // não publica JS em que a IA copiou o gabarito como texto (literal_suspeito)
+    const cj = fs.readdirSync(dir).filter(x => x.startsWith(s + '-' + r + '-r') && x.endsWith('.json')).map(x => { try { return JSON.parse(fs.readFileSync(path.join(dir, x), 'utf8')); } catch (e) { return {}; } });
+    if (cj.some(c => c.literal_suspeito)) { console.log('  ignorado (literal suspeito, IA copiou o gabarito):', s); continue; }
+    const alvo = path.join(dB, s + '.js'); if (!fs.existsSync(alvo)) continue;
     fs.writeFileSync(alvo, aplicar(fs.readFileSync(alvo, 'utf8'), fs.readFileSync(path.join(dir, f), 'utf8'))); n++;
   }
   console.log('B-jsweet-ia: A +', n, 'sample(s) corrigida(s) pela IA');

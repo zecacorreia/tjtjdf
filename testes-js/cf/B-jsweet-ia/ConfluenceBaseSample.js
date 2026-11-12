@@ -9,8 +9,8 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class ConfluenceBaseSample {
-                        constructor() {
+                    var ConfluenceBaseSample = /** @class */ (function () {
+                        function ConfluenceBaseSample() {
                             if (this.text === undefined) {
                                 this.text = null;
                             }
@@ -21,25 +21,26 @@ var br;
                                 this.spaces = null;
                             }
                         }
-                        countFixes() {
-                            const confluenceBaseSample = new ConfluenceBaseSample();
+                        ConfluenceBaseSample.prototype.countFixes = function () {
+                            var confluenceBaseSample = new ConfluenceBaseSample();
                             confluenceBaseSample.countDupWhitespace();
                             confluenceBaseSample.countComments();
                             confluenceBaseSample.countDupWords();
                             return confluenceBaseSample.spaces + confluenceBaseSample.words;
-                        }
-                        /*private*/ countDupWords() {
+                        };
+                        /*private*/ ConfluenceBaseSample.prototype.countDupWords = function () {
                             this.words = new Number(2).valueOf();
-                        }
-                        /*private*/ countComments() {
-                        }
-                        /*private*/ countDupWhitespace() {
+                        };
+                        /*private*/ ConfluenceBaseSample.prototype.countComments = function () {
+                        };
+                        /*private*/ ConfluenceBaseSample.prototype.countDupWhitespace = function () {
                             this.spaces = new Number(1).valueOf();
-                        }
-                        static main(args) {
+                        };
+                        ConfluenceBaseSample.main = function (args) {
                             console.info(new ConfluenceBaseSample().countFixes());
-                        }
-                    }
+                        };
+                        return ConfluenceBaseSample;
+                    }());
                     samples.ConfluenceBaseSample = ConfluenceBaseSample;
                     ConfluenceBaseSample["__class"] = "br.unb.cic.analysis.samples.ConfluenceBaseSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

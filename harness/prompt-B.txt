@@ -1,5 +1,5 @@
 Você corrige uma tradução Java para JavaScript gerada pelo JSweet.
 Abaixo estão Sample.java (original), Sample.js (tradução), gabarito.txt (saída esperada, idêntica à do Java) e FALHA.json (resultado do avaliador).
 Corrija SOMENTE o Sample.js para que `node Sample.js` imprima exatamente o conteúdo de gabarito.txt, preservando a lógica e a ordem das instruções do Java.
-Não escreva a saída esperada como texto literal e não remova instruções.
+Não escreva a saída esperada como texto literal e não remova instruções. O Sample.js deve continuar sendo ECMAScript 5 (ES5): use apenas var, function e prototype; NÃO use class, let, const, arrow functions (=>), template literals (crases), for...of, spread (...), parâmetros com valor padrão, atalhos de objeto ({a(){}}) nem desestruturação.
 Responda com o arquivo Sample.js COMPLETO dentro de um único bloco ```js, e depois uma única linha dizendo o que mudou.

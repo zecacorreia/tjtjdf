@@ -9,44 +9,48 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class IntraproceduralIndirectSource {
-                        m() {
-                            let x = 1000;
+                    var IntraproceduralIndirectSource = /** @class */ (function () {
+                        function IntraproceduralIndirectSource() {
+                        }
+                        IntraproceduralIndirectSource.prototype.m = function () {
+                            var x = 1000;
                             x = this.random();
                             console.info(x);
-                            const y = x + 1;
+                            var y = x + 1;
                             console.info(y);
-                        }
-                        /*private*/ random() {
+                        };
+                        /*private*/ IntraproceduralIndirectSource.prototype.random = function () {
                             return 0;
-                        }
-                        a() {
-                            const mock = new br.unb.cic.analysis.samples.MockClass();
+                        };
+                        IntraproceduralIndirectSource.prototype.a = function () {
+                            var mock = new br.unb.cic.analysis.samples.MockClass();
                             mock.setA(1);
-                            const y = mock.getA() + 1;
+                            var y = mock.getA() + 1;
                             console.info(y);
-                        }
-                        static main(args) {
-                            const o = new IntraproceduralIndirectSource();
+                        };
+                        IntraproceduralIndirectSource.main = function (args) {
+                            var o = new IntraproceduralIndirectSource();
                             o.m();
                             o.a();
-                        }
-                    }
+                        };
+                        return IntraproceduralIndirectSource;
+                    }());
                     samples.IntraproceduralIndirectSource = IntraproceduralIndirectSource;
                     IntraproceduralIndirectSource["__class"] = "br.unb.cic.analysis.samples.IntraproceduralIndirectSource";
-                    class MockClass {
-                        constructor() {
+                    var MockClass = /** @class */ (function () {
+                        function MockClass() {
                             if (this.a === undefined) {
                                 this.a = 0;
                             }
                         }
-                        setA(a) {
+                        MockClass.prototype.setA = function (a) {
                             this.a = a;
-                        }
-                        getA() {
+                        };
+                        MockClass.prototype.getA = function () {
                             return this.a;
-                        }
-                    }
+                        };
+                        return MockClass;
+                    }());
                     samples.MockClass = MockClass;
                     MockClass["__class"] = "br.unb.cic.analysis.samples.MockClass";
                 })(samples = analysis.samples || (analysis.samples = {}));

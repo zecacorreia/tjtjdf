@@ -9,26 +9,29 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class ArrayDataFlowSample {
-                        static main(args) {
-                            let arr = [0, 0, 0, 0, 0];
+                    var ArrayDataFlowSample = /** @class */ (function () {
+                        function ArrayDataFlowSample() {
+                        }
+                        ArrayDataFlowSample.main = function (args) {
+                            var arr = [0, 0, 0, 0, 0];
                             arr = ArrayDataFlowSample.populate(arr.length);
                             arr[4] = 10;
-                            const b = arr[4];
-                            for (let index = 0; index < arr.length; index++) {
-                                let a = arr[index];
+                            var b = arr[4];
+                            for (var index = 0; index < arr.length; index++) {
+                                var a = arr[index];
                                 console.info(a);
                             }
-                        }
-                        /*private*/ static populate(size) {
-                            const res = (s => { let a = []; while (s-- > 0)
+                        };
+                        /*private*/ ArrayDataFlowSample.populate = function (size) {
+                            var res = (function (s) { var a = []; while (s-- > 0)
                                 a.push(0); return a; })(size);
-                            for (let i = 0; i < size; i++) {
+                            for (var i = 0; i < size; i++) {
                                 res[i] = i + 1;
                             }
                             return res;
-                        }
-                    }
+                        };
+                        return ArrayDataFlowSample;
+                    }());
                     samples.ArrayDataFlowSample = ArrayDataFlowSample;
                     ArrayDataFlowSample["__class"] = "br.unb.cic.analysis.samples.ArrayDataFlowSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

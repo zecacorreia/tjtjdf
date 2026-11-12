@@ -2,7 +2,7 @@
 # Abordagem A (só JSweet) no container. Monte a pasta do projeto em /work e o ~/.m2 do host (com os forks) em /root/.m2.
 set -euo pipefail
 W=${W:-/work}; H=$W/_publicar/harness; E=${ESTUDO:-$W/estudo}
-PREP=$E/samples-preparadas; GAB=$E/gabarito; REPS=${REPS:-3}; MVN_FLAGS=${MVN_FLAGS:--o -q}
+PREP=$E/samples-preparadas; GAB=$E/gabarito; REPS=${REPS:-3}; MVN_FLAGS=${MVN_FLAGS:--o -q}; ES_TARGET=${ES_TARGET:-ES5}
 OUT=$E/resultados-harness/A-$(date +%Y%m%d-%H%M%S); mkdir -p "$OUT"
 echo "== ambiente"  | tee "$OUT/ambiente.txt"; { java -version 2>&1 | head -1; mvn -v | head -1; node -v; } | tee -a "$OUT/ambiente.txt"
 echo "== pré-passo e gabarito"
@@ -11,6 +11,9 @@ node $H/gabarito.js $PREP $GAB | tee "$OUT/gabarito.txt"
 # cópia de trabalho do quickstart só com as samples (sem a reescrita dataflow, sem cache .jsweet de outro SO)
 rm -rf /tmp/qs; cp -r $W/jsweet-quickstart /tmp/qs
 rm -rf /tmp/qs/target /tmp/qs/.jsweet /tmp/qs/src/main/java/quickstart
+# versão do ECMAScript gerada pelo JSweet (padrão ES5; ES_TARGET=ES6 reproduz a execução anterior)
+sed -i "s#<targetVersion>[^<]*</targetVersion>#<targetVersion>$ES_TARGET</targetVersion>#" /tmp/qs/pom.xml; grep -q "<targetVersion>$ES_TARGET</targetVersion>" /tmp/qs/pom.xml || { echo "nao consegui fixar targetVersion=$ES_TARGET no pom"; exit 1; }
+echo "targetVersion=$ES_TARGET" | tee -a "$OUT/ambiente.txt"
 mkdir -p /tmp/qs/src/main/java/br/unb/cic/analysis/samples; cp $PREP/*.java /tmp/qs/src/main/java/br/unb/cic/analysis/samples/
 for r in $(seq 1 $REPS); do
   rm -rf /tmp/qs/target; s=$(awk '{print $1}' /proc/uptime)

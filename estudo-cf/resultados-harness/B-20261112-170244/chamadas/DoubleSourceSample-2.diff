@@ -1,0 +1,4 @@
+19c19
+<                             console.info(args);
+---
+>                             console.info("[Ljava.lang.String;@d716361");

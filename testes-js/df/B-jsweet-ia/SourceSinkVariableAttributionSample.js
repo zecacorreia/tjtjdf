@@ -19,22 +19,25 @@ var br;
                      *
                      * @class
                      */
-                    class SourceSinkVariableAttributionSample {
-                        foo() {
-                            let x = 0;
-                            let y = 0;
-                            const z = 10;
+                    var SourceSinkVariableAttributionSample = /** @class */ (function () {
+                        function SourceSinkVariableAttributionSample() {
+                        }
+                        SourceSinkVariableAttributionSample.prototype.foo = function () {
+                            var x = 0;
+                            var y = 0;
+                            var z = 10;
                             x = 10;
                             y = z + 2;
                             this.addThese(x, y);
-                        }
-                        /*private*/ addThese(a0, a1) {
+                        };
+                        /*private*/ SourceSinkVariableAttributionSample.prototype.addThese = function (a0, a1) {
                             return a0 + a1;
-                        }
-                        static main(args) {
+                        };
+                        SourceSinkVariableAttributionSample.main = function (args) {
                             new SourceSinkVariableAttributionSample().foo();
-                        }
-                    }
+                        };
+                        return SourceSinkVariableAttributionSample;
+                    }());
                     samples.SourceSinkVariableAttributionSample = SourceSinkVariableAttributionSample;
                     SourceSinkVariableAttributionSample["__class"] = "br.unb.cic.analysis.samples.SourceSinkVariableAttributionSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

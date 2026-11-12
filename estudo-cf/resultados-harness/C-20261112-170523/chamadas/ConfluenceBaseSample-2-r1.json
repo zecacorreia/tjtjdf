@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2891,
+ "ms_resposta": 2891,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "f8adeba5550ba9217255458d355f03661839228952ef72b41a864707b3e9d43e",
+ "uso": {
+  "promptTokenCount": 504,
+  "candidatesTokenCount": 353,
+  "thoughtsTokenCount": 658,
+  "totalTokenCount": 1515
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample (Java) to ES5 JavaScript (Node.js)\n\nfunction ConfluenceBaseSample() {\n    // private fields (simulated)\n    this.text = null;\n    this.words = null;\n    this.spaces = null;\n}\n\n// countFixes method\nConfluenceBaseSample.prototype.countFixes = function () {\n    var confluenceBaseSample = new ConfluenceBaseSample();\n    confluenceBaseSample.countDupWhitespace(); // LEFT\n    confluenceBaseSample.countComments();\n    confluenceBaseSample.countDupWords();      // RIGHT\n    return confluenceBaseSample.spaces + confluenceBaseSample.words;\n};\n\n// countDupWords method\nConfluenceBaseSample.prototype.countDupWords = function () {\n    // In Java: this.words = new Integer(2);\n    this.words = 2;\n};\n\n// countComments method (empty)\nConfluenceBaseSample.prototype.countComments = function () {\n    // no operation\n};\n\n// countDupWhitespace method\nConfluenceBaseSample.prototype.countDupWhitespace = function () {\n    // In Java: this.spaces = new Integer(1);\n    this.spaces = 1;\n};\n\n// main function – mimics Java's public static void main(String[] args)\nfunction main(args) {\n    var result = new ConfluenceBaseSample().countFixes();\n    // System.out.println adds a line break; use process.stdout.write to control it\n    process.stdout.write(String(result) + \"\\n\");\n}\n\n// invoke main\nmain([]);\n```\n\n*Tradução completa da classe Java para JavaScript ES5, preservando a lógica e usando `process.stdout.write` para reproduzir o `println`.*"
+}

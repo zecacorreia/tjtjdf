@@ -9,23 +9,26 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class SourceSinkVariableAttributionWithAutoIncrement {
-                        foo() {
-                            let x = 0;
-                            let y = 0;
-                            const z = 10;
+                    var SourceSinkVariableAttributionWithAutoIncrement = /** @class */ (function () {
+                        function SourceSinkVariableAttributionWithAutoIncrement() {
+                        }
+                        SourceSinkVariableAttributionWithAutoIncrement.prototype.foo = function () {
+                            var x = 0;
+                            var y = 0;
+                            var z = 10;
                             x = 10;
                             x++;
                             y = z + 2;
                             this.addThese(x, y);
-                        }
-                        /*private*/ addThese(a0, a1) {
+                        };
+                        /*private*/ SourceSinkVariableAttributionWithAutoIncrement.prototype.addThese = function (a0, a1) {
                             return a0 + a1;
-                        }
-                        static main(args) {
+                        };
+                        SourceSinkVariableAttributionWithAutoIncrement.main = function (args) {
                             new SourceSinkVariableAttributionWithAutoIncrement().foo();
-                        }
-                    }
+                        };
+                        return SourceSinkVariableAttributionWithAutoIncrement;
+                    }());
                     samples.SourceSinkVariableAttributionWithAutoIncrement = SourceSinkVariableAttributionWithAutoIncrement;
                     SourceSinkVariableAttributionWithAutoIncrement["__class"] = "br.unb.cic.analysis.samples.SourceSinkVariableAttributionWithAutoIncrement";
                 })(samples = analysis.samples || (analysis.samples = {}));

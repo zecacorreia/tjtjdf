@@ -1,0 +1,1 @@
+Execucao invalida: erro de configuracao da API (chave, saldo ou modelo). Nao usar.

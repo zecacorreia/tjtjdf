@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2018,
+ "ms_resposta": 2018,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "62656ad5ef93cc213540425300c7e1ddd5e42169914f3a3a4e0553ac345b4633",
+ "uso": {
+  "promptTokenCount": 451,
+  "candidatesTokenCount": 225,
+  "thoughtsTokenCount": 465,
+  "totalTokenCount": 1141
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of InterproceduralConfluenceSample (Java) to ES5 JavaScript (Node.js)\n\nfunction InterproceduralConfluenceSample() {\n    // private field counter, initialized to 0\n    this.counter = 0;\n}\n\n// method: interproceduralSample\nInterproceduralConfluenceSample.prototype.interproceduralSample = function () {\n    var x = 0;\n    var y = 0;\n\n    x = x + 1; // source\n    y = y + 2; // sink\n\n    this.incrementCounter(x);\n    this.incrementCounter(y);\n};\n\n// method: incrementCounter\nInterproceduralConfluenceSample.prototype.incrementCounter = function (value) {\n    this.counter += value;\n};\n\n// static-like main function\nfunction main(args) {\n    new InterproceduralConfluenceSample().interproceduralSample();\n}\n\n// invoke main (args are ignored, matching Java's signature)\nmain([]);\n```\n\nTradução completa do programa Java para JavaScript ES5, preservando a lógica e sem produzir saída."
+}

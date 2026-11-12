@@ -1,0 +1,24 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 5659,
+ "ms_resposta": 1379,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [
+  429
+ ],
+ "infra_falhou": false,
+ "prompt_sha256": "62656ad5ef93cc213540425300c7e1ddd5e42169914f3a3a4e0553ac345b4633",
+ "uso": {
+  "promptTokenCount": 451,
+  "candidatesTokenCount": 191,
+  "thoughtsTokenCount": 243,
+  "totalTokenCount": 885
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js - translation of InterproceduralConfluenceSample (Java) to ES5 JavaScript (Node.js)\n\nfunction InterproceduralConfluenceSample() {\n    this.counter = 0;\n}\n\nInterproceduralConfluenceSample.prototype.interproceduralSample = function () {\n    var x = 0;\n    var y = 0;\n\n    x = x + 1; // source\n\n    y = y + 2; // sink\n\n    this.incrementCounter(x);\n    this.incrementCounter(y);\n};\n\nInterproceduralConfluenceSample.prototype.incrementCounter = function (value) {\n    this.counter += value;\n};\n\nfunction main() {\n    new InterproceduralConfluenceSample().interproceduralSample();\n}\n\n// invoke main when the script is executed\nmain();\n```\n\nTradução completa de InterproceduralConfluenceSample de Java para ES5 JavaScript sem saída."
+}

@@ -9,16 +9,19 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class DoubleSourceSample {
-                        static main(args) {
-                            let x = 10;
-                            let y = 20;
+                    var DoubleSourceSample = /** @class */ (function () {
+                        function DoubleSourceSample() {
+                        }
+                        DoubleSourceSample.main = function (args) {
+                            var x = 10;
+                            var y = 20;
                             x = x + 1;
                             console.info(args);
                             y = y - 1;
                             console.info(x + y);
-                        }
-                    }
+                        };
+                        return DoubleSourceSample;
+                    }());
                     samples.DoubleSourceSample = DoubleSourceSample;
                     DoubleSourceSample["__class"] = "br.unb.cic.analysis.samples.DoubleSourceSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

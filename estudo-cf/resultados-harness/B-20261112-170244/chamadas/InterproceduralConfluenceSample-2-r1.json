@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1667,
+ "ms_resposta": 1667,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "53e19362c38098a62bfedd28020bf52e1aad635b8fee00dd7d2b779376cef551",
+ "uso": {
+  "promptTokenCount": 967,
+  "candidatesTokenCount": 382,
+  "thoughtsTokenCount": 115,
+  "totalTokenCount": 1464
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    var InterproceduralConfluenceSample = /** @class */ (function () {\n                        function InterproceduralConfluenceSample() {\n                            this.counter = 0;\n                        }\n                        InterproceduralConfluenceSample.prototype.interproceduralSample = function () {\n                            var x = 0;\n                            var y = 0;\n                            x = x + 1;\n                            y = y + 2;\n                            this.incrementCounter(x);\n                            this.incrementCounter(y);\n                        };\n                        InterproceduralConfluenceSample.prototype.incrementCounter = function (value) {\n                            this.counter += value;\n                        };\n                        InterproceduralConfluenceSample.main = function (args) {\n                            new InterproceduralConfluenceSample().interproceduralSample();\n                        };\n                        return InterproceduralConfluenceSample;\n                    }());\n                    samples.InterproceduralConfluenceSample = InterproceduralConfluenceSample;\n                    InterproceduralConfluenceSample[\"__class\"] = \"br.unb.cic.analysis.samples.InterproceduralConfluenceSample\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.InterproceduralConfluenceSample.main(null);\n```\nsem alterações"
+}

@@ -9,24 +9,27 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class SourceSinkMethodCallSample {
-                        foo() {
-                            let x = 10;
-                            let y = 20;
+                    var SourceSinkMethodCallSample = /** @class */ (function () {
+                        function SourceSinkMethodCallSample() {
+                        }
+                        SourceSinkMethodCallSample.prototype.foo = function () {
+                            var x = 10;
+                            var y = 20;
                             x = this.one();
                             y = this.two();
                             console.info(x + y);
-                        }
-                        /*private*/ one() {
+                        };
+                        /*private*/ SourceSinkMethodCallSample.prototype.one = function () {
                             return 1;
-                        }
-                        /*private*/ two() {
+                        };
+                        /*private*/ SourceSinkMethodCallSample.prototype.two = function () {
                             return 2;
-                        }
-                        static main(args) {
+                        };
+                        SourceSinkMethodCallSample.main = function (args) {
                             new SourceSinkMethodCallSample().foo();
-                        }
-                    }
+                        };
+                        return SourceSinkMethodCallSample;
+                    }());
                     samples.SourceSinkMethodCallSample = SourceSinkMethodCallSample;
                     SourceSinkMethodCallSample["__class"] = "br.unb.cic.analysis.samples.SourceSinkMethodCallSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

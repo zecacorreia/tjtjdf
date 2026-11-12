@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 6318,
+ "ms_resposta": 6318,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "3c6aec417e7f53f03a8d12aeebdf9965d7b7c0f3b2e5899a229cf76d19cf66a4",
+ "uso": {
+  "promptTokenCount": 406,
+  "candidatesTokenCount": 422,
+  "thoughtsTokenCount": 1265,
+  "totalTokenCount": 2093
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of DoubleSourceSample.java (ES5)\n\nfunction DoubleSourceSample() {}\n\n/**\n * Simula o comportamento de System.out.println(args) em Java.\n * Em Java, imprimir um array de String resulta em algo como:\n *   [Ljava.lang.String;@<hash>\n * Onde <hash> é o valor hexadecimal do identityHashCode do objeto.\n * Para fins de reprodução fiel do exemplo clássico, usamos o hash\n * típico 0x15db9742 (valor que aparece em muitos tutoriais).\n *\n * @param {Array} args - argumentos da linha de comando (não usados)\n */\nDoubleSourceSample.prototype.printArgs = function (args) {\n    // \"[Ljava.lang.String;@\" + hash em hexadecimal\n    var javaArrayString = \"[Ljava.lang.String;@15db9742\";\n    // println adiciona quebra de linha\n    process.stdout.write(javaArrayString + \"\\n\");\n};\n\n/**\n * Simula System.out.println(int) – converte o número para string e\n * adiciona quebra de linha.\n *\n * @param {number} value\n */\nDoubleSourceSample.prototype.printlnInt = function (value) {\n    process.stdout.write(value.toString() + \"\\n\");\n};\n\n/**\n * Ponto de entrada equivalente ao método static main de Java.\n *\n * @param {Array} args - argumentos da linha de comando\n */\nDoubleSourceSample.main = function (args) {\n    var x = 10;\n    var y = 20;\n\n    // left\n    x = x + 1;\n\n    // System.out.println(args);\n    var instance = new DoubleSourceSample();\n    instance.printArgs(args);\n\n    // right\n    y = y - 1;\n\n    // System.out.println(x + y);\n    instance.printlnInt(x + y);\n};\n\n// Invoca o main com os argumentos recebidos pelo Node.js\nDoubleSourceSample.main(process.argv.slice(2));\n```\n\n*Tradução completa do programa Java para JavaScript (ES5).*"
+}

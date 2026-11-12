@@ -1,24 +1,32 @@
-// Translated from SourceSinkVariableAttributionSample.java to Node.js (no external libraries)
+// Sample.js – translation of SourceSinkVariableAttributionSample.java to ES5 JavaScript
 
-class SourceSinkVariableAttributionSample {
-  foo() {
-    let x = 0;
-    let y = 0;
-    let z = 10;
+function SourceSinkVariableAttributionSample() {
+    // constructor – no fields needed
+}
 
-    x = 10;               // left
-    y = z + 2;            // right
+// instance method foo()
+SourceSinkVariableAttributionSample.prototype.foo = function () {
+    var x = 0;
+    var y = 0;
+    var z = 10;
 
-    this.addThese(x, y);  // Confluence Line
-  }
+    x = 10;          // left
 
-  addThese(a0, a1) {
+    y = z + 2;       // right
+
+    // Confluence line – result is ignored, as in the Java version
+    this.addThese(x, y);
+};
+
+// private (simulated) method addThese(int a0, int a1)
+SourceSinkVariableAttributionSample.prototype.addThese = function (a0, a1) {
     return a0 + a1;
-  }
-}
+};
 
-function main() {
-  new SourceSinkVariableAttributionSample().foo();
-}
+// static main method
+SourceSinkVariableAttributionSample.main = function (args) {
+    new SourceSinkVariableAttributionSample().foo();
+};
 
-main();
+// invoke main when the script is run
+SourceSinkVariableAttributionSample.main([]);

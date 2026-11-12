@@ -16,6 +16,7 @@ Avalia a tradução Java → JavaScript das 9 samples de DF, igual para A, B (e 
 | `comparar.js` | Tabela A × B × C: `node comparar.js <pasta-A> --B pastaB1,pastaB2 --C pastaC1` |
 | `jsweet-lote.sh` | Roda o JSweet (A) em lote nos conjuntos DF e CF e imprime um resumo por conjunto; `jsweet-lote-docker.sh` é o atalho para o Git Bash |
 | `exportar-planilha.js` | Junta todos os resultados (A, B, C; DF e CF) em `docs/resultados-todas-execucoes.csv`, uma linha por pasta, sample e repetição, com L1/L2/L3, tokens, latência, literal suspeito e validade. Roda sozinho no fim de `run-A.sh`, `run-B.sh` e `run-C.sh`; manual: `node exportar-planilha.js` |
+| `es5.js` | Verifica se um `.js` usa só sintaxe ECMAScript 5 (parser acorn do Node, `--expose-internals`). O `evaluate.js` registra o campo `ES5` por sample; `run-B.sh` e `run-C.sh` só encerram a correção quando o L3 passa **e** o JS é ES5. A A usa `ES_TARGET` (padrão `ES5`; `ES_TARGET=ES6` reproduz as execuções de 02 a 10/11). |
 | `csv-para-planilha.py` | Copia esse CSV para a aba "Todas as execuções" da planilha `.xlsx` (`python3 csv-para-planilha.py`, requer openpyxl) |
 | `docker-run.ps1` | Sobe o container no Windows/PowerShell (`-Modo A` ou `-Modo B`); no Git Bash use o `docker run` abaixo |
 

@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 4125,
+ "ms_resposta": 4125,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "f8adeba5550ba9217255458d355f03661839228952ef72b41a864707b3e9d43e",
+ "uso": {
+  "promptTokenCount": 504,
+  "candidatesTokenCount": 335,
+  "thoughtsTokenCount": 675,
+  "totalTokenCount": 1514
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceBaseSample from Java to ES5 JavaScript (Node.js)\n\nfunction ConfluenceBaseSample() {\n    this.text = null;\n    this.words = null;\n    this.spaces = null;\n}\n\n// public int countFixes()\nConfluenceBaseSample.prototype.countFixes = function () {\n    var confluenceBaseSample = new ConfluenceBaseSample();\n    confluenceBaseSample.countDupWhitespace(); // LEFT\n    confluenceBaseSample.countComments();\n    confluenceBaseSample.countDupWords(); // RIGHT\n    // In Java the Integer objects are unboxed; here we store plain numbers.\n    return confluenceBaseSample.spaces + confluenceBaseSample.words;\n};\n\n// private void countDupWords()\nConfluenceBaseSample.prototype.countDupWords = function () {\n    this.words = 2; // new Integer(2) → 2\n};\n\n// private void countComments()\nConfluenceBaseSample.prototype.countComments = function () {\n    // intentionally empty\n};\n\n// private void countDupWhitespace()\nConfluenceBaseSample.prototype.countDupWhitespace = function () {\n    this.spaces = 1; // new Integer(1) → 1\n};\n\n// public static void main(String[] args)\nfunction main(args) {\n    // System.out.println adds a line break; console.log does the same.\n    console.log(new ConfluenceBaseSample().countFixes());\n}\n\n// invoke main as the program entry point\nmain([]);\n```\n\n*Tradução mantém a lógica: cria duas instâncias, conta espaços e palavras (1 + 2) e imprime `3`."
+}

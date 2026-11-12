@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 1648,
+ "ms_resposta": 1648,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "3f69dcb9cf1bbd1f9a733a0bba1f764dd38748867fd0cf73642d7ee8882cf894",
+ "uso": {
+  "promptTokenCount": 906,
+  "candidatesTokenCount": 347,
+  "thoughtsTokenCount": 150,
+  "totalTokenCount": 1403
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */\nvar br;\n(function (br) {\n    var unb;\n    (function (unb) {\n        var cic;\n        (function (cic) {\n            var analysis;\n            (function (analysis) {\n                var samples;\n                (function (samples) {\n                    var ConfluenceBaseSample2 = /** @class */ (function () {\n                        function ConfluenceBaseSample2() {\n                        }\n                        ConfluenceBaseSample2.prototype.m = function () {\n                            var x = 1;\n                            var base = 1;\n                            var y = 1;\n                            var z;\n                            if (x + y > 1) {\n                                z = 1;\n                            }\n                            else {\n                                z = 0;\n                            }\n                        };\n                        ConfluenceBaseSample2.main = function (args) {\n                            new ConfluenceBaseSample2().m();\n                        };\n                        return ConfluenceBaseSample2;\n                    }());\n                    samples.ConfluenceBaseSample2 = ConfluenceBaseSample2;\n                    ConfluenceBaseSample2[\"__class\"] = \"br.unb.cic.analysis.samples.ConfluenceBaseSample2\";\n                })(samples = analysis.samples || (analysis.samples = {}));\n            })(analysis = cic.analysis || (cic.analysis = {}));\n        })(cic = unb.cic || (unb.cic = {}));\n    })(unb = br.unb || (br.unb = {}));\n})(br || (br = {}));\nbr.unb.cic.analysis.samples.ConfluenceBaseSample2.main(null);\n```\nsem alterações"
+}

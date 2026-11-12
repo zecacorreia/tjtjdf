@@ -1,32 +1,26 @@
-// Sample.js – translation of InterproceduralConfluenceSample.java to Node.js
+// Sample.js – translation of InterproceduralConfluenceSample (ES5)
 
-class InterproceduralConfluenceSample {
-  constructor() {
-    this.counter = 0; // private int counter = 0;
-  }
+function InterproceduralConfluenceSample() {
+    this.counter = 0;
+}
 
-  interproceduralSample() {
-    // int x = 0; int y = 0;
-    let x = 0;
-    let y = 0;
+InterproceduralConfluenceSample.prototype.interproceduralSample = function () {
+    var x = 0;
+    var y = 0;
 
     x = x + 1; // source
     y = y + 2; // sink
 
     this.incrementCounter(x);
     this.incrementCounter(y);
-  }
+};
 
-  incrementCounter(value) {
-    // counter += value;
+InterproceduralConfluenceSample.prototype.incrementCounter = function (value) {
     this.counter += value;
-  }
-}
+};
 
-// Simulate the static main method
 function main() {
-  new InterproceduralConfluenceSample().interproceduralSample();
+    new InterproceduralConfluenceSample().interproceduralSample();
 }
 
-// Invoke main when the script is executed
 main();

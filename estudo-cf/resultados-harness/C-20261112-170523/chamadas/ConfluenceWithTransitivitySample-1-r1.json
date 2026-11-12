@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2395,
+ "ms_resposta": 2395,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "db6aef0523c7fddb323103b46a4562ac6d703bb5074e1ce61d576afaff233df7",
+ "uso": {
+  "promptTokenCount": 456,
+  "candidatesTokenCount": 237,
+  "thoughtsTokenCount": 627,
+  "totalTokenCount": 1320
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceWithTransitivitySample.java (ES5)\n\nfunction ConfluenceWithTransitivitySample() {\n    // constructor (no fields to initialize)\n}\n\n// public void foo()\nConfluenceWithTransitivitySample.prototype.foo = function () {\n    var x = 1;\n    var y = 2;\n    var z = 3;\n\n    x = 10; // left\n\n    z = x + 1;\n\n    y++; // right\n\n    // addThese(z, y);\n    console.log(z + y); // System.out.println adds a newline\n};\n\n/*\n // private int addThese(int a1, int a2) { return a1 + a2; }\nConfluenceWithTransitivitySample.prototype.addThese = function (a1, a2) {\n    return a1 + a2;\n};\n*/\n\nfunction main(args) {\n    new ConfluenceWithTransitivitySample().foo();\n}\n\n// call main to produce the output\nmain([]);\n```\n\n*Tradução completa do programa Java para JavaScript (ES5) preservando a estrutura de classes e a lógica.*"
+}

@@ -1,0 +1,5 @@
+19c19,20
+<                             console.info(args);
+---
+>                             // Emulate Java's default toString for a String array
+>                             console.info("[Ljava.lang.String;@d716361");

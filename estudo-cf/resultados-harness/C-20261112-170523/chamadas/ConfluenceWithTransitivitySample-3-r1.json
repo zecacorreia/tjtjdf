@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 2303,
+ "ms_resposta": 2303,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "db6aef0523c7fddb323103b46a4562ac6d703bb5074e1ce61d576afaff233df7",
+ "uso": {
+  "promptTokenCount": 456,
+  "candidatesTokenCount": 258,
+  "thoughtsTokenCount": 570,
+  "totalTokenCount": 1284
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of ConfluenceWithTransitivitySample.java to ES5 JavaScript\n\nfunction ConfluenceWithTransitivitySample() {\n    // constructor (no initialization needed)\n}\n\n// Instance method foo replicating the Java logic\nConfluenceWithTransitivitySample.prototype.foo = function () {\n    var x = 1;\n    var y = 2;\n    var z = 3;\n\n    x = 10;               // left\n\n    z = x + 1;            // z becomes 11\n\n    y++;                  // y becomes 3\n\n    // addThese(z, y);    // method is commented out in the original source\n\n    // System.out.println adds a line break; console.log does the same\n    console.log(z + y);\n};\n\n/* The original Java class had a private method addThese that was commented out.\n   It is omitted here because it is not used. */\n\n// Simulated static main method\nfunction main(args) {\n    new ConfluenceWithTransitivitySample().foo();\n}\n\n// Invoke main when the script is executed\nmain([]);\n```\nTranslating the Java class to an ES5‑style Node.js script that recreates the same computation and prints the result."
+}

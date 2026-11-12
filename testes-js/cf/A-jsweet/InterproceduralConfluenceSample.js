@@ -9,25 +9,26 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class InterproceduralConfluenceSample {
-                        constructor() {
+                    var InterproceduralConfluenceSample = /** @class */ (function () {
+                        function InterproceduralConfluenceSample() {
                             this.counter = 0;
                         }
-                        interproceduralSample() {
-                            let x = 0;
-                            let y = 0;
+                        InterproceduralConfluenceSample.prototype.interproceduralSample = function () {
+                            var x = 0;
+                            var y = 0;
                             x = x + 1;
                             y = y + 2;
                             this.incrementCounter(x);
                             this.incrementCounter(y);
-                        }
-                        incrementCounter(value) {
+                        };
+                        InterproceduralConfluenceSample.prototype.incrementCounter = function (value) {
                             this.counter += value;
-                        }
-                        static main(args) {
+                        };
+                        InterproceduralConfluenceSample.main = function (args) {
                             new InterproceduralConfluenceSample().interproceduralSample();
-                        }
-                    }
+                        };
+                        return InterproceduralConfluenceSample;
+                    }());
                     samples.InterproceduralConfluenceSample = InterproceduralConfluenceSample;
                     InterproceduralConfluenceSample["__class"] = "br.unb.cic.analysis.samples.InterproceduralConfluenceSample";
                 })(samples = analysis.samples || (analysis.samples = {}));

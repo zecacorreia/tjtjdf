@@ -1,47 +1,40 @@
-// Sample.js – translation of IntraproceduralDataFlow.java to Node.js (no external libraries)
+// Sample.js – translation of IntraproceduralDataFlow (ES5)
 
-class IntraproceduralDataFlow {
-    foo() {
-        // int x = random(); // source
-        const x = this.random();
-
-        // int y = x * 10;
-        const y = x * 10;
-
-        // System.out.println(y);
-        console.log(y);
-
-        // blah(x); // sink
-        this.blah(x);
-    }
-
-    random() {
-        // return 10;
-        return 10;
-    }
-
-    blah(z) {
-        // int x = random(); // source
-        let x = this.random();
-
-        // int y = z * x;
-        const y = z * x;
-
-        // System.out.println(y);
-        console.log(y);
-
-        // x = 10;
-        x = 10;
-
-        // System.out.println(x); // sink
-        console.log(x);
-    }
-
-    // Simulate the static main method
-    static main() {
-        new IntraproceduralDataFlow().foo();
-    }
+function IntraproceduralDataFlow() {
+    // constructor – no fields needed
 }
 
-// Invoke the main entry point, matching the Java execution model
-IntraproceduralDataFlow.main();
+// private int random() { return 10; }
+IntraproceduralDataFlow.prototype.random = function () {
+    return 10;
+};
+
+// private void blah(int z) { ... }
+IntraproceduralDataFlow.prototype.blah = function (z) {
+    var x = this.random();          // source
+    var y = z * x;
+
+    console.log(y);                 // System.out.println(y);
+
+    x = 10;                         // sink assignment
+
+    console.log(x);                 // System.out.println(x);
+};
+
+// public void foo() { ... }
+IntraproceduralDataFlow.prototype.foo = function () {
+    var x = this.random();          // source
+    var y = x * 10;
+
+    console.log(y);                 // System.out.println(y);
+
+    this.blah(x);                   // sink call
+};
+
+// public static void main(String[] args) { new IntraproceduralDataFlow().foo(); }
+IntraproceduralDataFlow.main = function (args) {
+    new IntraproceduralDataFlow().foo();
+};
+
+// invoke main when the script is run
+IntraproceduralDataFlow.main(process.argv.slice(2));

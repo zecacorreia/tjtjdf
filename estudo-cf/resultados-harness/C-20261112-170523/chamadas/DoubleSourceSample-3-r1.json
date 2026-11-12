@@ -1,0 +1,22 @@
+{
+ "provedor": "openai",
+ "modelo": "openai/gpt-oss-120b",
+ "temperatura": 0,
+ "http": 200,
+ "ms": 3126,
+ "ms_resposta": 3126,
+ "aplicado": true,
+ "literal_suspeito": false,
+ "tentativas_transitorias": [],
+ "infra_falhou": false,
+ "prompt_sha256": "3c6aec417e7f53f03a8d12aeebdf9965d7b7c0f3b2e5899a229cf76d19cf66a4",
+ "uso": {
+  "promptTokenCount": 406,
+  "candidatesTokenCount": 349,
+  "thoughtsTokenCount": 891,
+  "totalTokenCount": 1646
+ },
+ "finish": "stop",
+ "erro": null,
+ "resposta": "```js\n// Sample.js – translation of DoubleSourceSample.java (ES5)\n\nfunction DoubleSourceSample() {}\n\n// Simula o hashCode usado por Java para representar o array na saída de println\nfunction javaArrayToString(arr) {\n    // Calcula um hash simples baseado no conteúdo (determinístico)\n    var h = 0;\n    for (var i = 0; i < arr.length; i++) {\n        var s = arr[i];\n        for (var j = 0; j < s.length; j++) {\n            h = ((31 * h) + s.charCodeAt(j)) | 0; // overflow como em Java (int 32‑bits)\n        }\n    }\n    // Converte para hexadecimal sem sinal\n    var hex = (h >>> 0).toString(16);\n    return \"[Ljava.lang.String;@\" + hex;\n}\n\n// método main equivalente\nDoubleSourceSample.main = function (args) {\n    var x = 10;\n    var y = 20;\n\n    x = x + 1; // left\n\n    // System.out.println(args);\n    process.stdout.write(javaArrayToString(args) + \"\\n\");\n\n    y = y - 1; // right\n\n    // System.out.println(x + y);\n    console.log(x + y);\n};\n\n// chama o main com os argumentos da linha de comando (excluindo node e o script)\nDoubleSourceSample.main(process.argv.slice(2));\n```\n\n*Tradução completa de DoubleSourceSample.java para Sample.js em ES5, preservando a lógica e usando process.stdout.write para reproduzir System.out.println sem quebra de linha extra.*"
+}

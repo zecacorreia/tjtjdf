@@ -9,27 +9,30 @@ var br;
             (function (analysis) {
                 var samples;
                 (function (samples) {
-                    class IntraproceduralDataFlow {
-                        foo() {
-                            const x = this.random();
-                            const y = x * 10;
+                    var IntraproceduralDataFlow = /** @class */ (function () {
+                        function IntraproceduralDataFlow() {
+                        }
+                        IntraproceduralDataFlow.prototype.foo = function () {
+                            var x = this.random();
+                            var y = x * 10;
                             console.info(y);
                             this.blah(x);
-                        }
-                        /*private*/ random() {
+                        };
+                        /*private*/ IntraproceduralDataFlow.prototype.random = function () {
                             return 10;
-                        }
-                        /*private*/ blah(z) {
-                            let x = this.random();
-                            const y = z * x;
+                        };
+                        /*private*/ IntraproceduralDataFlow.prototype.blah = function (z) {
+                            var x = this.random();
+                            var y = z * x;
                             console.info(y);
                             x = 10;
                             console.info(x);
-                        }
-                        static main(args) {
+                        };
+                        IntraproceduralDataFlow.main = function (args) {
                             new IntraproceduralDataFlow().foo();
-                        }
-                    }
+                        };
+                        return IntraproceduralDataFlow;
+                    }());
                     samples.IntraproceduralDataFlow = IntraproceduralDataFlow;
                     IntraproceduralDataFlow["__class"] = "br.unb.cic.analysis.samples.IntraproceduralDataFlow";
                 })(samples = analysis.samples || (analysis.samples = {}));
